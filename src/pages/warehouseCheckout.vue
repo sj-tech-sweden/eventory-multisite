@@ -158,14 +158,7 @@
                   <q-card-section>
                     <div class="text-caption">Quantity: {{ props.row.quantity }}</div>
                     <div class="text-caption">Out: {{ props.row.out }}</div>
-                    <div class="text-caption row items-center q-gutter-xs">
-                      <span>Done:</span>
-                      <q-icon
-                        :name="getDoneStatusIcon(props.row)"
-                        :color="getDoneStatusColor(props.row)"
-                        size="18px"
-                      />
-                    </div>
+                    <DoneStatusIndicator :item="props.row" show-label />
                     <div class="text-caption">
                       Checkout:
                       <div class="row no-wrap">
@@ -195,11 +188,7 @@
               </template>
               <template v-slot:body-cell-done="props">
                 <q-td :props="props" class="text-center">
-                  <q-icon
-                    :name="getDoneStatusIcon(props.row)"
-                    :color="getDoneStatusColor(props.row)"
-                    size="18px"
-                  />
+                  <DoneStatusIndicator :item="props.row" />
                 </q-td>
               </template>
             </q-table>
@@ -249,14 +238,7 @@
                   <q-card-section>
                     <div class="text-caption">Quantity: {{ props.row.quantity }}</div>
                     <div class="text-caption">Out: {{ props.row.out }}</div>
-                    <div class="text-caption row items-center q-gutter-xs">
-                      <span>Done:</span>
-                      <q-icon
-                        :name="getDoneStatusIcon(props.row)"
-                        :color="getDoneStatusColor(props.row)"
-                        size="18px"
-                      />
-                    </div>
+                    <DoneStatusIndicator :item="props.row" show-label />
                     <div class="text-caption">
                       Checkout:
                       <div class="row no-wrap">
@@ -286,11 +268,7 @@
               </template>
               <template v-slot:body-cell-done="props">
                 <q-td :props="props" class="text-center">
-                  <q-icon
-                    :name="getDoneStatusIcon(props.row)"
-                    :color="getDoneStatusColor(props.row)"
-                    size="18px"
-                  />
+                  <DoneStatusIndicator :item="props.row" />
                 </q-td>
               </template>
             </q-table>
@@ -363,14 +341,7 @@
                   <q-card-section>
                     <div class="text-caption">Quantity: {{ props.row.quantity }}</div>
                     <div class="text-caption">Out: {{ props.row.out }}</div>
-                    <div class="text-caption row items-center q-gutter-xs">
-                      <span>Done:</span>
-                      <q-icon
-                        :name="getDoneStatusIcon(props.row)"
-                        :color="getDoneStatusColor(props.row)"
-                        size="18px"
-                      />
-                    </div>
+                    <DoneStatusIndicator :item="props.row" show-label />
                     <div class="text-caption">
                       Checkout:
                       <div class="row no-wrap">
@@ -423,11 +394,7 @@
               </template>
               <template v-slot:body-cell-done="props">
                 <q-td :props="props" class="text-center">
-                  <q-icon
-                    :name="getDoneStatusIcon(props.row)"
-                    :color="getDoneStatusColor(props.row)"
-                    size="18px"
-                  />
+                  <DoneStatusIndicator :item="props.row" />
                 </q-td>
               </template>
             </q-table>
@@ -604,6 +571,7 @@ import { useQuasar } from 'quasar'
 import { getIcon } from 'src/utils/getIcon'
 import { closestQuasarColor } from 'src/utils/colorUtils'
 import ScanPanel from 'src/components/ScanPanel.vue'
+import DoneStatusIndicator from 'src/components/DoneStatusIndicator.vue'
 
 // Define the login store
 const loginStore = useLoginStore()
@@ -869,23 +837,26 @@ const getJobColor = (date) => {
 
 const filterJobsByDateRange = async (range) => {
   console.info(`Filtering jobs by date range: ${JSON.stringify(range)}`)
-
-  if (range.from && range.to) {
-    // Handle date range
-    const { from, to } = range
-    console.info(`Filtering jobs between ${from} and ${to}`)
-    filteredJobs.value = jobs.value.filter((event) => {
-      const eventDate = new Date(event.startDate)
-      return eventDate >= new Date(from) && eventDate <= new Date(to)
-    })
-  } else {
-    // Handle single date
-    const date = range
-    console.info(`Filtering jobs for date: ${date}`)
-    filteredJobs.value = jobs.value.filter((event) => event.startDate === date)
+  try {
+    if (range.from && range.to) {
+      // Handle date range
+      const { from, to } = range
+      console.info(`Filtering jobs between ${from} and ${to}`)
+      filteredJobs.value = jobs.value.filter((event) => {
+        const eventDate = new Date(event.startDate)
+        return eventDate >= new Date(from) && eventDate <= new Date(to)
+      })
+    } else {
+      // Handle single date
+      const date = range
+      console.info(`Filtering jobs for date: ${date}`)
+      filteredJobs.value = jobs.value.filter((event) => event.startDate === date)
+    }
+    // Fetch packlist details for filtered jobs
+    await fetchPacklistDetailsForFilteredJobs()
+  } catch (error) {
+    console.error('Failed to refresh checkout packlists for selected date range:', error)
   }
-  // Fetch packlist details for filtered jobs
-  await fetchPacklistDetailsForFilteredJobs()
 }
 
 // Function to fetch packlist details for filtered jobs
@@ -1000,10 +971,6 @@ const sortedPacklists = computed(() =>
 )
 
 const hasMetOrExceededQuantity = (item) => Number(item?.out ?? 0) >= Number(item?.quantity ?? 0)
-
-const getDoneStatusIcon = (item) =>
-  hasMetOrExceededQuantity(item) ? 'check_circle' : 'radio_button_unchecked'
-const getDoneStatusColor = (item) => (hasMetOrExceededQuantity(item) ? 'positive' : 'grey-6')
 
 const getCheckoutRowClass = (row) => {
   if (hasMetOrExceededQuantity(row)) return 'row-scan-complete'
