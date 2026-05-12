@@ -121,6 +121,7 @@
               row-key="id"
               :rows-per-page-options="[0]"
               :grid="$q.screen.xs"
+              :table-row-class-fn="getCheckoutRowClass"
             >
               <template v-slot:body-cell-checkout="props">
                 <q-td :props="props">
@@ -148,7 +149,7 @@
                 </q-td>
               </template>
               <template v-slot:item="props">
-                <q-card class="nested-card">
+                <q-card :class="['nested-card', getCheckoutCardClass(props.row)]">
                   <q-card-section>
                     <div class="text-subtitle">{{ props.row.name }}</div>
                     <div v-if="props.row.category" class="text-caption">Category: {{ props.row.category }}</div>
@@ -157,6 +158,7 @@
                   <q-card-section>
                     <div class="text-caption">Quantity: {{ props.row.quantity }}</div>
                     <div class="text-caption">Out: {{ props.row.out }}</div>
+                    <DoneStatusIndicator :item="props.row" show-label />
                     <div class="text-caption">
                       Checkout:
                       <div class="row no-wrap">
@@ -184,6 +186,11 @@
                   </q-card-section>
                 </q-card>
               </template>
+              <template v-slot:body-cell-done="props">
+                <q-td :props="props" class="text-center">
+                  <DoneStatusIndicator :item="props.row" />
+                </q-td>
+              </template>
             </q-table>
           </q-card-section>
           <q-card-section v-if="packlist.mappedConsumables.length">
@@ -194,6 +201,7 @@
               row-key="id"
               :rows-per-page-options="[0]"
               :grid="$q.screen.xs"
+              :table-row-class-fn="getCheckoutRowClass"
             >
               <template v-slot:body-cell-checkout="props">
                 <q-td :props="props">
@@ -221,7 +229,7 @@
                 </q-td>
               </template>
               <template v-slot:item="props">
-                <q-card class="nested-card">
+                <q-card :class="['nested-card', getCheckoutCardClass(props.row)]">
                   <q-card-section>
                     <div class="text-subtitle">{{ props.row.name }}</div>
                     <div v-if="props.row.category" class="text-caption">Category: {{ props.row.category }}</div>
@@ -230,6 +238,7 @@
                   <q-card-section>
                     <div class="text-caption">Quantity: {{ props.row.quantity }}</div>
                     <div class="text-caption">Out: {{ props.row.out }}</div>
+                    <DoneStatusIndicator :item="props.row" show-label />
                     <div class="text-caption">
                       Checkout:
                       <div class="row no-wrap">
@@ -257,6 +266,11 @@
                   </q-card-section>
                 </q-card>
               </template>
+              <template v-slot:body-cell-done="props">
+                <q-td :props="props" class="text-center">
+                  <DoneStatusIndicator :item="props.row" />
+                </q-td>
+              </template>
             </q-table>
           </q-card-section>
           <q-card-section v-if="packlist.mappedSubrentals.length">
@@ -267,6 +281,7 @@
               row-key="id"
               :rows-per-page-options="[0]"
               :grid="$q.screen.xs"
+              :table-row-class-fn="getCheckoutRowClass"
             >
               <template v-slot:body-cell-checkout="props">
                 <q-td :props="props">
@@ -317,7 +332,7 @@
                 </q-td>
               </template>
               <template v-slot:item="props">
-                <q-card class="nested-card">
+                <q-card :class="['nested-card', getCheckoutCardClass(props.row)]">
                   <q-card-section>
                     <div class="text-subtitle">{{ props.row.name }}</div>
                     <div v-if="props.row.category" class="text-caption">Category: {{ props.row.category }}</div>
@@ -326,6 +341,7 @@
                   <q-card-section>
                     <div class="text-caption">Quantity: {{ props.row.quantity }}</div>
                     <div class="text-caption">Out: {{ props.row.out }}</div>
+                    <DoneStatusIndicator :item="props.row" show-label />
                     <div class="text-caption">
                       Checkout:
                       <div class="row no-wrap">
@@ -375,6 +391,11 @@
                     <div class="text-caption">Rented Units: {{ props.row.rentedUnits }}</div>
                   </q-card-section>
                 </q-card>
+              </template>
+              <template v-slot:body-cell-done="props">
+                <q-td :props="props" class="text-center">
+                  <DoneStatusIndicator :item="props.row" />
+                </q-td>
               </template>
             </q-table>
           </q-card-section>
@@ -550,6 +571,7 @@ import { useQuasar } from 'quasar'
 import { getIcon } from 'src/utils/getIcon'
 import { closestQuasarColor } from 'src/utils/colorUtils'
 import ScanPanel from 'src/components/ScanPanel.vue'
+import DoneStatusIndicator from 'src/components/DoneStatusIndicator.vue'
 
 // Define the login store
 const loginStore = useLoginStore()
@@ -593,19 +615,56 @@ loginStore.startTokenRefresh()
 // ── Scan to check-out state ──────────────────────────────────────────────────
 const scanPanelOpen = ref(false)
 const scanLoginId = ref(loginStore.logins[0]?.id ?? null)
-const scanLoginOptions = computed(() =>
-  loginStore.logins.map((l) => ({ label: l.organisation || l.username, value: l.id })),
-)
-// Keep scanLoginId pointing at a valid login when logins change
+const buildScanLoginLabel = (organisation, login) =>
+  organisation ??
+  login?.organisation ??
+  login?.username ??
+  (login?.id != null ? `Login ${login.id}` : 'Unknown login')
+
+const scanLoginOptions = computed(() => {
+  const uniqueLoginOptions = new Map()
+  const sourceJobs = filteredJobs.value.length ? filteredJobs.value : jobs.value
+  const sourceLoginIds = new Set()
+  sourceJobs.forEach((job) => {
+    if (job?.login?.id != null) {
+      sourceLoginIds.add(job.login.id)
+    }
+  })
+  const candidateLogins = sourceLoginIds.size
+    ? loginStore.logins.filter((login) => sourceLoginIds.has(login.id))
+    : loginStore.logins
+
+  candidateLogins.forEach((login) => {
+    uniqueLoginOptions.set(login.id, {
+      label: buildScanLoginLabel(login.organisation, login),
+      value: login.id,
+    })
+  })
+
+  if (!uniqueLoginOptions.size) {
+    loginStore.logins.forEach((login) => {
+      uniqueLoginOptions.set(login.id, {
+        label: buildScanLoginLabel(login.organisation, login),
+        value: login.id,
+      })
+    })
+  }
+
+  return Array.from(uniqueLoginOptions.values())
+})
+
+// Keep scanLoginId pointing at a valid login when jobs/logins change
 watch(
-  () => loginStore.logins,
-  (logins) => {
-    if (scanLoginId.value === null && logins.length > 0) {
-      scanLoginId.value = logins[0].id
-    } else if (!logins.find((l) => l.id === scanLoginId.value)) {
-      scanLoginId.value = logins[0]?.id ?? null
+  scanLoginOptions,
+  (options) => {
+    if (options.length === 1) {
+      scanLoginId.value = options[0].value
+    }
+    if (!options.find((option) => option.value === scanLoginId.value)) {
+      scanLoginId.value = options[0]?.value ?? null
     }
   },
+  { immediate: true },
 )
 const activeScanLogin = computed(() => loginStore.logins.find((l) => l.id === scanLoginId.value))
 const scanLoading = ref(false)
@@ -631,8 +690,6 @@ const onScanOut = async (code) => {
       code,
     }
     $q.notify({ message: scanResult.value.message, color: 'green' })
-    // Refresh packlist data to reflect updated quantities
-    await fetchPacklistDetailsForFilteredJobs()
   } catch (error) {
     const message =
       error.response?.data?.detail ||
@@ -640,6 +697,19 @@ const onScanOut = async (code) => {
       `Failed to scan code: ${code}`
     scanResult.value = { success: false, message, code }
     $q.notify({ message, color: 'red' })
+    scanLoading.value = false
+    return
+  }
+
+  try {
+    // Refresh only currently visible checkout packlists after a successful scan.
+    await fetchPacklistDetailsForFilteredJobs()
+  } catch (refreshError) {
+    console.error('Scan succeeded but checkout refresh failed:', refreshError)
+    $q.notify({
+      message: 'Scan registered, but failed to refresh checkout data.',
+      color: 'orange',
+    })
   } finally {
     scanLoading.value = false
   }
@@ -661,6 +731,7 @@ const rentalColumns = [
   { name: 'quantity', align: 'center', label: 'Quantity', field: 'quantity', sortable: true },
   { name: 'checkout', align: 'center', label: 'Check out', field: 'checkout', sortable: false },
   { name: 'out', align: 'center', label: 'Out', field: 'out', sortable: true },
+  { name: 'done', align: 'center', label: 'Done', field: 'done', sortable: false },
 ]
 
 const consumableColumns = [
@@ -678,6 +749,7 @@ const consumableColumns = [
   { name: 'quantity', align: 'center', label: 'Quantity', field: 'quantity', sortable: true },
   { name: 'checkout', align: 'center', label: 'Check out', field: 'checkout', sortable: false },
   { name: 'out', align: 'right', label: 'Out', field: 'out', sortable: true },
+  { name: 'done', align: 'center', label: 'Done', field: 'done', sortable: false },
 ]
 
 const subrentalColumns = [
@@ -695,6 +767,7 @@ const subrentalColumns = [
   { name: 'quantity', align: 'center', label: 'Quantity', field: 'quantity', sortable: true },
   { name: 'out', align: 'center', label: 'Out', field: 'out', sortable: true },
   { name: 'checkout', align: 'center', label: 'Check out', field: 'checkout', sortable: false },
+  { name: 'done', align: 'center', label: 'Done', field: 'done', sortable: false },
   { name: 'supplier', align: 'left', label: 'Supplier', field: 'supplier', sortable: true },
   { name: 'rent', align: 'center', label: 'Rent', field: 'rent', sortable: false },
   {
@@ -736,11 +809,15 @@ const fetchJobs = async () => {
         jobs.value.push(...fetchedJobs)
         // console.info(`Total jobs: ${JSON.stringify(jobs.value)}`)
         console.log(`dateJobs: ${JSON.stringify(dateJobs.value)}`)
-        filterJobsByDateRange(selectedDate.value) // Filter jobs after fetching
       } catch (error) {
         console.error(`Failed to fetch jobs for ${login.username}:`, error)
       }
     }
+  }
+  try {
+    await filterJobsByDateRange(selectedDate.value)
+  } catch (error) {
+    console.error('Failed to apply checkout date filter / packlist refresh:', error)
   }
 }
 
@@ -758,25 +835,28 @@ const getJobColor = (date) => {
   return closestQuasarColor(matchingJob.color) || 'primary'
 }
 
-const filterJobsByDateRange = (range) => {
+const filterJobsByDateRange = async (range) => {
   console.info(`Filtering jobs by date range: ${JSON.stringify(range)}`)
-
-  if (range.from && range.to) {
-    // Handle date range
-    const { from, to } = range
-    console.info(`Filtering jobs between ${from} and ${to}`)
-    filteredJobs.value = jobs.value.filter((event) => {
-      const eventDate = new Date(event.startDate)
-      return eventDate >= new Date(from) && eventDate <= new Date(to)
-    })
-  } else {
-    // Handle single date
-    const date = range
-    console.info(`Filtering jobs for date: ${date}`)
-    filteredJobs.value = jobs.value.filter((event) => event.startDate === date)
+  try {
+    if (range.from && range.to) {
+      // Handle date range
+      const { from, to } = range
+      console.info(`Filtering jobs between ${from} and ${to}`)
+      filteredJobs.value = jobs.value.filter((event) => {
+        const eventDate = new Date(event.startDate)
+        return eventDate >= new Date(from) && eventDate <= new Date(to)
+      })
+    } else {
+      // Handle single date
+      const date = range
+      console.info(`Filtering jobs for date: ${date}`)
+      filteredJobs.value = jobs.value.filter((event) => event.startDate === date)
+    }
+    // Fetch packlist details for filtered jobs
+    await fetchPacklistDetailsForFilteredJobs()
+  } catch (error) {
+    console.error('Failed to refresh checkout packlists for selected date range:', error)
   }
-  // Fetch packlist details for filtered jobs
-  fetchPacklistDetailsForFilteredJobs()
 }
 
 // Function to fetch packlist details for filtered jobs
@@ -889,6 +969,15 @@ const sortedPacklists = computed(() =>
     mappedSubrentals: sortItems(pl.mappedSubrentals, sortBy.value),
   })),
 )
+
+const hasMetOrExceededQuantity = (item) => Number(item?.out ?? 0) >= Number(item?.quantity ?? 0)
+
+const getCheckoutRowClass = (row) => {
+  if (hasMetOrExceededQuantity(row)) return 'row-scan-complete'
+  return 'row-scan-pending'
+}
+
+const getCheckoutCardClass = (row) => getCheckoutRowClass(row)
 
 // Function to handle check-in action
 const checkOutItem = async (item, type, login) => {
@@ -1449,5 +1538,25 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+:deep(.row-scan-complete) {
+  background: #e8f5e9;
+  color: #1b4332;
+}
+
+:deep(.row-scan-pending) {
+  background: #fff8e1;
+  color: #7c4700;
+}
+
+:deep(.body--dark .row-scan-complete) {
+  background: #1f3b2d;
+  color: #d4f5df;
+}
+
+:deep(.body--dark .row-scan-pending) {
+  background: #4d3f1c;
+  color: #ffe9be;
 }
 </style>
