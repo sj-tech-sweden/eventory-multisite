@@ -648,14 +648,14 @@ loginStore.startTokenRefresh()
 const scanPanelOpen = ref(false)
 const scanLoginId = ref(loginStore.logins[0]?.id ?? null)
 const buildScanLoginLabel = (organisation, login) =>
-  organisation ?? login?.organisation ?? login?.username ?? ''
+  organisation ?? login?.organisation ?? login?.username ?? 'Unknown login'
 
 const scanLoginOptions = computed(() => {
   const uniqueLoginOptions = new Map()
   const sourceJobs = filteredJobs.value.length ? filteredJobs.value : jobs.value
   const sourceLoginIds = new Set()
   sourceJobs.forEach((job) => {
-    if (job?.login?.id !== null && job?.login?.id !== undefined) {
+    if (job?.login?.id != null) {
       sourceLoginIds.add(job.login.id)
     }
   })
@@ -672,7 +672,7 @@ const scanLoginOptions = computed(() => {
 
   if (!uniqueLoginOptions.size) {
     loginStore.logins.forEach((login) => {
-      if (!login?.id) return
+      if (login?.id == null) return
       uniqueLoginOptions.set(login.id, {
         label: buildScanLoginLabel(login.organisation, login),
         value: login.id,
