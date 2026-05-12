@@ -713,8 +713,6 @@ const onScanOut = async (code) => {
       code,
     }
     $q.notify({ message: scanResult.value.message, color: 'green' })
-    // Refresh jobs; this also reapplies the selected date filter and reloads packlists
-    await fetchJobs()
   } catch (error) {
     const message =
       error.response?.data?.detail ||
@@ -722,6 +720,19 @@ const onScanOut = async (code) => {
       `Failed to scan code: ${code}`
     scanResult.value = { success: false, message, code }
     $q.notify({ message, color: 'red' })
+    scanLoading.value = false
+    return
+  }
+
+  try {
+    // Refresh only currently visible checkout packlists after a successful scan.
+    await fetchPacklistDetailsForFilteredJobs()
+  } catch (refreshError) {
+    console.error('Scan succeeded but checkout refresh failed:', refreshError)
+    $q.notify({
+      message: 'Scan registered, but failed to refresh checkout data.',
+      color: 'orange',
+    })
   } finally {
     scanLoading.value = false
   }
