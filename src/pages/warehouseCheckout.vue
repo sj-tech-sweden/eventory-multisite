@@ -653,15 +653,17 @@ const buildScanLoginLabel = (organisation, login) =>
 const scanLoginOptions = computed(() => {
   const uniqueLoginOptions = new Map()
   const sourceJobs = filteredJobs.value.length ? filteredJobs.value : jobs.value
-  const sourceLoginIds = new Set(
-    sourceJobs.map((job) => job?.login?.id).filter((loginId) => loginId != null),
-  )
+  const sourceLoginIds = new Set()
+  sourceJobs.forEach((job) => {
+    if (job?.login?.id != null) {
+      sourceLoginIds.add(job.login.id)
+    }
+  })
   const candidateLogins = sourceLoginIds.size
     ? loginStore.logins.filter((login) => sourceLoginIds.has(login.id))
     : loginStore.logins
 
   candidateLogins.forEach((login) => {
-    if (!login?.id) return
     uniqueLoginOptions.set(login.id, {
       label: buildScanLoginLabel(login.organisation, login),
       value: login.id,
