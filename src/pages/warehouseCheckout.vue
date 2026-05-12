@@ -121,6 +121,7 @@
               row-key="id"
               :rows-per-page-options="[0]"
               :grid="$q.screen.xs"
+              :table-row-class-fn="getCheckoutRowClass"
             >
               <template v-slot:body-cell-checkout="props">
                 <q-td :props="props">
@@ -148,7 +149,7 @@
                 </q-td>
               </template>
               <template v-slot:item="props">
-                <q-card class="nested-card">
+                <q-card :class="['nested-card', getCheckoutRowClass(null, props.row)]">
                   <q-card-section>
                     <div class="text-subtitle">{{ props.row.name }}</div>
                     <div v-if="props.row.category" class="text-caption">Category: {{ props.row.category }}</div>
@@ -157,6 +158,10 @@
                   <q-card-section>
                     <div class="text-caption">Quantity: {{ props.row.quantity }}</div>
                     <div class="text-caption">Out: {{ props.row.out }}</div>
+                    <div class="text-caption row items-center q-gutter-xs">
+                      <span>Clear:</span>
+                      <q-checkbox :model-value="isScannedOutEnough(props.row)" disable />
+                    </div>
                     <div class="text-caption">
                       Checkout:
                       <div class="row no-wrap">
@@ -184,6 +189,11 @@
                   </q-card-section>
                 </q-card>
               </template>
+              <template v-slot:body-cell-clear="props">
+                <q-td :props="props" class="text-center">
+                  <q-checkbox :model-value="isScannedOutEnough(props.row)" disable />
+                </q-td>
+              </template>
             </q-table>
           </q-card-section>
           <q-card-section v-if="packlist.mappedConsumables.length">
@@ -194,6 +204,7 @@
               row-key="id"
               :rows-per-page-options="[0]"
               :grid="$q.screen.xs"
+              :table-row-class-fn="getCheckoutRowClass"
             >
               <template v-slot:body-cell-checkout="props">
                 <q-td :props="props">
@@ -221,7 +232,7 @@
                 </q-td>
               </template>
               <template v-slot:item="props">
-                <q-card class="nested-card">
+                <q-card :class="['nested-card', getCheckoutRowClass(null, props.row)]">
                   <q-card-section>
                     <div class="text-subtitle">{{ props.row.name }}</div>
                     <div v-if="props.row.category" class="text-caption">Category: {{ props.row.category }}</div>
@@ -230,6 +241,10 @@
                   <q-card-section>
                     <div class="text-caption">Quantity: {{ props.row.quantity }}</div>
                     <div class="text-caption">Out: {{ props.row.out }}</div>
+                    <div class="text-caption row items-center q-gutter-xs">
+                      <span>Clear:</span>
+                      <q-checkbox :model-value="isScannedOutEnough(props.row)" disable />
+                    </div>
                     <div class="text-caption">
                       Checkout:
                       <div class="row no-wrap">
@@ -257,6 +272,11 @@
                   </q-card-section>
                 </q-card>
               </template>
+              <template v-slot:body-cell-clear="props">
+                <q-td :props="props" class="text-center">
+                  <q-checkbox :model-value="isScannedOutEnough(props.row)" disable />
+                </q-td>
+              </template>
             </q-table>
           </q-card-section>
           <q-card-section v-if="packlist.mappedSubrentals.length">
@@ -267,6 +287,7 @@
               row-key="id"
               :rows-per-page-options="[0]"
               :grid="$q.screen.xs"
+              :table-row-class-fn="getCheckoutRowClass"
             >
               <template v-slot:body-cell-checkout="props">
                 <q-td :props="props">
@@ -317,7 +338,7 @@
                 </q-td>
               </template>
               <template v-slot:item="props">
-                <q-card class="nested-card">
+                <q-card :class="['nested-card', getCheckoutRowClass(null, props.row)]">
                   <q-card-section>
                     <div class="text-subtitle">{{ props.row.name }}</div>
                     <div v-if="props.row.category" class="text-caption">Category: {{ props.row.category }}</div>
@@ -326,6 +347,10 @@
                   <q-card-section>
                     <div class="text-caption">Quantity: {{ props.row.quantity }}</div>
                     <div class="text-caption">Out: {{ props.row.out }}</div>
+                    <div class="text-caption row items-center q-gutter-xs">
+                      <span>Clear:</span>
+                      <q-checkbox :model-value="isScannedOutEnough(props.row)" disable />
+                    </div>
                     <div class="text-caption">
                       Checkout:
                       <div class="row no-wrap">
@@ -375,6 +400,11 @@
                     <div class="text-caption">Rented Units: {{ props.row.rentedUnits }}</div>
                   </q-card-section>
                 </q-card>
+              </template>
+              <template v-slot:body-cell-clear="props">
+                <q-td :props="props" class="text-center">
+                  <q-checkbox :model-value="isScannedOutEnough(props.row)" disable />
+                </q-td>
               </template>
             </q-table>
           </q-card-section>
@@ -593,19 +623,45 @@ loginStore.startTokenRefresh()
 // ── Scan to check-out state ──────────────────────────────────────────────────
 const scanPanelOpen = ref(false)
 const scanLoginId = ref(loginStore.logins[0]?.id ?? null)
-const scanLoginOptions = computed(() =>
-  loginStore.logins.map((l) => ({ label: l.organisation || l.username, value: l.id })),
-)
-// Keep scanLoginId pointing at a valid login when logins change
+const scanLoginOptions = computed(() => {
+  const optionsById = new Map()
+  const sourceJobs = filteredJobs.value.length ? filteredJobs.value : jobs.value
+
+  sourceJobs.forEach((job) => {
+    if (!job?.login?.id) return
+    if (!optionsById.has(job.login.id)) {
+      optionsById.set(job.login.id, {
+        label: job.organisation || job.login.organisation || job.login.username,
+        value: job.login.id,
+      })
+    }
+  })
+
+  if (!optionsById.size) {
+    loginStore.logins.forEach((login) => {
+      optionsById.set(login.id, {
+        label: login.organisation || login.username,
+        value: login.id,
+      })
+    })
+  }
+
+  return Array.from(optionsById.values())
+})
+
+// Keep scanLoginId pointing at a valid login when jobs/logins change
 watch(
-  () => loginStore.logins,
-  (logins) => {
-    if (scanLoginId.value === null && logins.length > 0) {
-      scanLoginId.value = logins[0].id
-    } else if (!logins.find((l) => l.id === scanLoginId.value)) {
-      scanLoginId.value = logins[0]?.id ?? null
+  scanLoginOptions,
+  (options) => {
+    if (options.length === 1) {
+      scanLoginId.value = options[0].value
+      return
+    }
+    if (!options.find((option) => option.value === scanLoginId.value)) {
+      scanLoginId.value = options[0]?.value ?? null
     }
   },
+  { immediate: true },
 )
 const activeScanLogin = computed(() => loginStore.logins.find((l) => l.id === scanLoginId.value))
 const scanLoading = ref(false)
@@ -631,8 +687,8 @@ const onScanOut = async (code) => {
       code,
     }
     $q.notify({ message: scanResult.value.message, color: 'green' })
-    // Refresh packlist data to reflect updated quantities
-    await fetchPacklistDetailsForFilteredJobs()
+    // Refresh jobs and packlists to reflect updated state after scan
+    await fetchJobs()
   } catch (error) {
     const message =
       error.response?.data?.detail ||
@@ -661,6 +717,7 @@ const rentalColumns = [
   { name: 'quantity', align: 'center', label: 'Quantity', field: 'quantity', sortable: true },
   { name: 'checkout', align: 'center', label: 'Check out', field: 'checkout', sortable: false },
   { name: 'out', align: 'center', label: 'Out', field: 'out', sortable: true },
+  { name: 'clear', align: 'center', label: 'Clear', field: 'clear', sortable: false },
 ]
 
 const consumableColumns = [
@@ -678,6 +735,7 @@ const consumableColumns = [
   { name: 'quantity', align: 'center', label: 'Quantity', field: 'quantity', sortable: true },
   { name: 'checkout', align: 'center', label: 'Check out', field: 'checkout', sortable: false },
   { name: 'out', align: 'right', label: 'Out', field: 'out', sortable: true },
+  { name: 'clear', align: 'center', label: 'Clear', field: 'clear', sortable: false },
 ]
 
 const subrentalColumns = [
@@ -695,6 +753,7 @@ const subrentalColumns = [
   { name: 'quantity', align: 'center', label: 'Quantity', field: 'quantity', sortable: true },
   { name: 'out', align: 'center', label: 'Out', field: 'out', sortable: true },
   { name: 'checkout', align: 'center', label: 'Check out', field: 'checkout', sortable: false },
+  { name: 'clear', align: 'center', label: 'Clear', field: 'clear', sortable: false },
   { name: 'supplier', align: 'left', label: 'Supplier', field: 'supplier', sortable: true },
   { name: 'rent', align: 'center', label: 'Rent', field: 'rent', sortable: false },
   {
@@ -736,12 +795,12 @@ const fetchJobs = async () => {
         jobs.value.push(...fetchedJobs)
         // console.info(`Total jobs: ${JSON.stringify(jobs.value)}`)
         console.log(`dateJobs: ${JSON.stringify(dateJobs.value)}`)
-        filterJobsByDateRange(selectedDate.value) // Filter jobs after fetching
       } catch (error) {
         console.error(`Failed to fetch jobs for ${login.username}:`, error)
       }
     }
   }
+  filterJobsByDateRange(selectedDate.value)
 }
 
 const dateJobs = computed(() => {
@@ -889,6 +948,14 @@ const sortedPacklists = computed(() =>
     mappedSubrentals: sortItems(pl.mappedSubrentals, sortBy.value),
   })),
 )
+
+const isScannedOutEnough = (item) => Number(item?.out ?? 0) >= Number(item?.quantity ?? 0)
+
+const getCheckoutRowClass = (rowOrIndex, maybeRow) => {
+  const row = maybeRow || rowOrIndex
+  if (isScannedOutEnough(row)) return 'row-scan-complete'
+  return 'row-scan-pending'
+}
 
 // Function to handle check-in action
 const checkOutItem = async (item, type, login) => {
@@ -1449,5 +1516,13 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+:deep(.row-scan-complete) {
+  background: #e8f5e9;
+}
+
+:deep(.row-scan-pending) {
+  background: #fff8e1;
 }
 </style>
