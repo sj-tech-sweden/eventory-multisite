@@ -149,7 +149,7 @@
                 </q-td>
               </template>
               <template v-slot:item="props">
-                <q-card :class="['nested-card', getCheckoutRowClass(null, props.row)]">
+                <q-card :class="['nested-card', getCheckoutCardClass(props.row)]">
                   <q-card-section>
                     <div class="text-subtitle">{{ props.row.name }}</div>
                     <div v-if="props.row.category" class="text-caption">Category: {{ props.row.category }}</div>
@@ -159,8 +159,12 @@
                     <div class="text-caption">Quantity: {{ props.row.quantity }}</div>
                     <div class="text-caption">Out: {{ props.row.out }}</div>
                     <div class="text-caption row items-center q-gutter-xs">
-                      <span>Clear:</span>
-                      <q-checkbox :model-value="hasMetOrExceededQuantity(props.row)" disable />
+                      <span>Done:</span>
+                      <q-icon
+                        :name="getDoneStatusIcon(props.row)"
+                        :color="getDoneStatusColor(props.row)"
+                        size="18px"
+                      />
                     </div>
                     <div class="text-caption">
                       Checkout:
@@ -189,9 +193,13 @@
                   </q-card-section>
                 </q-card>
               </template>
-              <template v-slot:body-cell-clear="props">
+              <template v-slot:body-cell-done="props">
                 <q-td :props="props" class="text-center">
-                  <q-checkbox :model-value="hasMetOrExceededQuantity(props.row)" disable />
+                  <q-icon
+                    :name="getDoneStatusIcon(props.row)"
+                    :color="getDoneStatusColor(props.row)"
+                    size="18px"
+                  />
                 </q-td>
               </template>
             </q-table>
@@ -232,7 +240,7 @@
                 </q-td>
               </template>
               <template v-slot:item="props">
-                <q-card :class="['nested-card', getCheckoutRowClass(null, props.row)]">
+                <q-card :class="['nested-card', getCheckoutCardClass(props.row)]">
                   <q-card-section>
                     <div class="text-subtitle">{{ props.row.name }}</div>
                     <div v-if="props.row.category" class="text-caption">Category: {{ props.row.category }}</div>
@@ -242,8 +250,12 @@
                     <div class="text-caption">Quantity: {{ props.row.quantity }}</div>
                     <div class="text-caption">Out: {{ props.row.out }}</div>
                     <div class="text-caption row items-center q-gutter-xs">
-                      <span>Clear:</span>
-                      <q-checkbox :model-value="hasMetOrExceededQuantity(props.row)" disable />
+                      <span>Done:</span>
+                      <q-icon
+                        :name="getDoneStatusIcon(props.row)"
+                        :color="getDoneStatusColor(props.row)"
+                        size="18px"
+                      />
                     </div>
                     <div class="text-caption">
                       Checkout:
@@ -272,9 +284,13 @@
                   </q-card-section>
                 </q-card>
               </template>
-              <template v-slot:body-cell-clear="props">
+              <template v-slot:body-cell-done="props">
                 <q-td :props="props" class="text-center">
-                  <q-checkbox :model-value="hasMetOrExceededQuantity(props.row)" disable />
+                  <q-icon
+                    :name="getDoneStatusIcon(props.row)"
+                    :color="getDoneStatusColor(props.row)"
+                    size="18px"
+                  />
                 </q-td>
               </template>
             </q-table>
@@ -338,7 +354,7 @@
                 </q-td>
               </template>
               <template v-slot:item="props">
-                <q-card :class="['nested-card', getCheckoutRowClass(null, props.row)]">
+                <q-card :class="['nested-card', getCheckoutCardClass(props.row)]">
                   <q-card-section>
                     <div class="text-subtitle">{{ props.row.name }}</div>
                     <div v-if="props.row.category" class="text-caption">Category: {{ props.row.category }}</div>
@@ -348,8 +364,12 @@
                     <div class="text-caption">Quantity: {{ props.row.quantity }}</div>
                     <div class="text-caption">Out: {{ props.row.out }}</div>
                     <div class="text-caption row items-center q-gutter-xs">
-                      <span>Clear:</span>
-                      <q-checkbox :model-value="hasMetOrExceededQuantity(props.row)" disable />
+                      <span>Done:</span>
+                      <q-icon
+                        :name="getDoneStatusIcon(props.row)"
+                        :color="getDoneStatusColor(props.row)"
+                        size="18px"
+                      />
                     </div>
                     <div class="text-caption">
                       Checkout:
@@ -401,9 +421,13 @@
                   </q-card-section>
                 </q-card>
               </template>
-              <template v-slot:body-cell-clear="props">
+              <template v-slot:body-cell-done="props">
                 <q-td :props="props" class="text-center">
-                  <q-checkbox :model-value="hasMetOrExceededQuantity(props.row)" disable />
+                  <q-icon
+                    :name="getDoneStatusIcon(props.row)"
+                    :color="getDoneStatusColor(props.row)"
+                    size="18px"
+                  />
                 </q-td>
               </template>
             </q-table>
@@ -719,7 +743,7 @@ const rentalColumns = [
   { name: 'quantity', align: 'center', label: 'Quantity', field: 'quantity', sortable: true },
   { name: 'checkout', align: 'center', label: 'Check out', field: 'checkout', sortable: false },
   { name: 'out', align: 'center', label: 'Out', field: 'out', sortable: true },
-  { name: 'clear', align: 'center', label: 'Clear', field: 'clear', sortable: false },
+  { name: 'done', align: 'center', label: 'Done', field: 'done', sortable: false },
 ]
 
 const consumableColumns = [
@@ -737,7 +761,7 @@ const consumableColumns = [
   { name: 'quantity', align: 'center', label: 'Quantity', field: 'quantity', sortable: true },
   { name: 'checkout', align: 'center', label: 'Check out', field: 'checkout', sortable: false },
   { name: 'out', align: 'right', label: 'Out', field: 'out', sortable: true },
-  { name: 'clear', align: 'center', label: 'Clear', field: 'clear', sortable: false },
+  { name: 'done', align: 'center', label: 'Done', field: 'done', sortable: false },
 ]
 
 const subrentalColumns = [
@@ -755,7 +779,7 @@ const subrentalColumns = [
   { name: 'quantity', align: 'center', label: 'Quantity', field: 'quantity', sortable: true },
   { name: 'out', align: 'center', label: 'Out', field: 'out', sortable: true },
   { name: 'checkout', align: 'center', label: 'Check out', field: 'checkout', sortable: false },
-  { name: 'clear', align: 'center', label: 'Clear', field: 'clear', sortable: false },
+  { name: 'done', align: 'center', label: 'Done', field: 'done', sortable: false },
   { name: 'supplier', align: 'left', label: 'Supplier', field: 'supplier', sortable: true },
   { name: 'rent', align: 'center', label: 'Rent', field: 'rent', sortable: false },
   {
@@ -802,7 +826,7 @@ const fetchJobs = async () => {
       }
     }
   }
-  filterJobsByDateRange(selectedDate.value)
+  await filterJobsByDateRange(selectedDate.value)
 }
 
 const dateJobs = computed(() => {
@@ -819,7 +843,7 @@ const getJobColor = (date) => {
   return closestQuasarColor(matchingJob.color) || 'primary'
 }
 
-const filterJobsByDateRange = (range) => {
+const filterJobsByDateRange = async (range) => {
   console.info(`Filtering jobs by date range: ${JSON.stringify(range)}`)
 
   if (range.from && range.to) {
@@ -837,7 +861,7 @@ const filterJobsByDateRange = (range) => {
     filteredJobs.value = jobs.value.filter((event) => event.startDate === date)
   }
   // Fetch packlist details for filtered jobs
-  fetchPacklistDetailsForFilteredJobs()
+  await fetchPacklistDetailsForFilteredJobs()
 }
 
 // Function to fetch packlist details for filtered jobs
@@ -953,11 +977,16 @@ const sortedPacklists = computed(() =>
 
 const hasMetOrExceededQuantity = (item) => Number(item?.out ?? 0) >= Number(item?.quantity ?? 0)
 
-const getCheckoutRowClass = (quasarTableRow, directRow) => {
-  const row = directRow || quasarTableRow
+const getDoneStatusIcon = (item) =>
+  hasMetOrExceededQuantity(item) ? 'check_circle' : 'radio_button_unchecked'
+const getDoneStatusColor = (item) => (hasMetOrExceededQuantity(item) ? 'positive' : 'grey-6')
+
+const getCheckoutRowClass = (row) => {
   if (hasMetOrExceededQuantity(row)) return 'row-scan-complete'
   return 'row-scan-pending'
 }
+
+const getCheckoutCardClass = (row) => getCheckoutRowClass(row)
 
 // Function to handle check-in action
 const checkOutItem = async (item, type, login) => {
@@ -1522,9 +1551,21 @@ onMounted(() => {
 
 :deep(.row-scan-complete) {
   background: #e8f5e9;
+  color: #1b4332;
 }
 
 :deep(.row-scan-pending) {
   background: #fff8e1;
+  color: #7c4700;
+}
+
+:deep(.body--dark .row-scan-complete) {
+  background: #1f3b2d;
+  color: #d4f5df;
+}
+
+:deep(.body--dark .row-scan-pending) {
+  background: #4d3f1c;
+  color: #ffe9be;
 }
 </style>
