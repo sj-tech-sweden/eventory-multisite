@@ -720,7 +720,6 @@ const onScanOut = async (code) => {
       `Failed to scan code: ${code}`
     scanResult.value = { success: false, message, code }
     $q.notify({ message, color: 'red' })
-    scanLoading.value = false
     return
   }
 
