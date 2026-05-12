@@ -653,19 +653,24 @@ const buildScanLoginLabel = (organisation, login) =>
 const scanLoginOptions = computed(() => {
   const uniqueLoginOptions = new Map()
   const sourceJobs = filteredJobs.value.length ? filteredJobs.value : jobs.value
+  const sourceLoginIds = new Set(
+    sourceJobs.map((job) => job?.login?.id).filter((loginId) => loginId != null),
+  )
+  const candidateLogins = sourceLoginIds.size
+    ? loginStore.logins.filter((login) => sourceLoginIds.has(login.id))
+    : loginStore.logins
 
-  sourceJobs.forEach((job) => {
-    if (!job || !job.login?.id) return
-    if (!uniqueLoginOptions.has(job.login.id)) {
-      uniqueLoginOptions.set(job.login.id, {
-        label: buildScanLoginLabel(job.organisation, job.login),
-        value: job.login.id,
-      })
-    }
+  candidateLogins.forEach((login) => {
+    if (!login?.id) return
+    uniqueLoginOptions.set(login.id, {
+      label: buildScanLoginLabel(login.organisation, login),
+      value: login.id,
+    })
   })
 
   if (!uniqueLoginOptions.size) {
     loginStore.logins.forEach((login) => {
+      if (!login?.id) return
       uniqueLoginOptions.set(login.id, {
         label: buildScanLoginLabel(login.organisation, login),
         value: login.id,
@@ -720,6 +725,7 @@ const onScanOut = async (code) => {
       `Failed to scan code: ${code}`
     scanResult.value = { success: false, message, code }
     $q.notify({ message, color: 'red' })
+    scanLoading.value = false
     return
   }
 
@@ -836,7 +842,11 @@ const fetchJobs = async () => {
       }
     }
   }
-  await filterJobsByDateRange(selectedDate.value)
+  try {
+    await filterJobsByDateRange(selectedDate.value)
+  } catch (error) {
+    console.error('Failed to apply checkout date filter / packlist refresh:', error)
+  }
 }
 
 const dateJobs = computed(() => {
