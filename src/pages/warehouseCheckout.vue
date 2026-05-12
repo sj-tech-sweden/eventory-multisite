@@ -648,7 +648,10 @@ loginStore.startTokenRefresh()
 const scanPanelOpen = ref(false)
 const scanLoginId = ref(loginStore.logins[0]?.id ?? null)
 const buildScanLoginLabel = (organisation, login) =>
-  organisation ?? login?.organisation ?? login?.username ?? `Login ${String(login?.id ?? '')}`.trim()
+  organisation ??
+  login?.organisation ??
+  login?.username ??
+  (login?.id != null ? `Login ${login.id}` : 'Unknown login')
 
 const scanLoginOptions = computed(() => {
   const uniqueLoginOptions = new Map()
