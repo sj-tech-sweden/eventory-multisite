@@ -160,7 +160,7 @@
                     <div class="text-caption">Out: {{ props.row.out }}</div>
                     <div class="text-caption row items-center q-gutter-xs">
                       <span>Clear:</span>
-                      <q-checkbox :model-value="isScannedOutEnough(props.row)" disable />
+                      <q-checkbox :model-value="hasMetOrExceededQuantity(props.row)" disable />
                     </div>
                     <div class="text-caption">
                       Checkout:
@@ -191,7 +191,7 @@
               </template>
               <template v-slot:body-cell-clear="props">
                 <q-td :props="props" class="text-center">
-                  <q-checkbox :model-value="isScannedOutEnough(props.row)" disable />
+                  <q-checkbox :model-value="hasMetOrExceededQuantity(props.row)" disable />
                 </q-td>
               </template>
             </q-table>
@@ -243,7 +243,7 @@
                     <div class="text-caption">Out: {{ props.row.out }}</div>
                     <div class="text-caption row items-center q-gutter-xs">
                       <span>Clear:</span>
-                      <q-checkbox :model-value="isScannedOutEnough(props.row)" disable />
+                      <q-checkbox :model-value="hasMetOrExceededQuantity(props.row)" disable />
                     </div>
                     <div class="text-caption">
                       Checkout:
@@ -274,7 +274,7 @@
               </template>
               <template v-slot:body-cell-clear="props">
                 <q-td :props="props" class="text-center">
-                  <q-checkbox :model-value="isScannedOutEnough(props.row)" disable />
+                  <q-checkbox :model-value="hasMetOrExceededQuantity(props.row)" disable />
                 </q-td>
               </template>
             </q-table>
@@ -349,7 +349,7 @@
                     <div class="text-caption">Out: {{ props.row.out }}</div>
                     <div class="text-caption row items-center q-gutter-xs">
                       <span>Clear:</span>
-                      <q-checkbox :model-value="isScannedOutEnough(props.row)" disable />
+                      <q-checkbox :model-value="hasMetOrExceededQuantity(props.row)" disable />
                     </div>
                     <div class="text-caption">
                       Checkout:
@@ -403,7 +403,7 @@
               </template>
               <template v-slot:body-cell-clear="props">
                 <q-td :props="props" class="text-center">
-                  <q-checkbox :model-value="isScannedOutEnough(props.row)" disable />
+                  <q-checkbox :model-value="hasMetOrExceededQuantity(props.row)" disable />
                 </q-td>
               </template>
             </q-table>
@@ -623,30 +623,33 @@ loginStore.startTokenRefresh()
 // ── Scan to check-out state ──────────────────────────────────────────────────
 const scanPanelOpen = ref(false)
 const scanLoginId = ref(loginStore.logins[0]?.id ?? null)
+const buildScanLoginLabel = (organisation, login) =>
+  organisation || login?.organisation || login?.username
+
 const scanLoginOptions = computed(() => {
-  const optionsById = new Map()
+  const uniqueLoginOptions = new Map()
   const sourceJobs = filteredJobs.value.length ? filteredJobs.value : jobs.value
 
   sourceJobs.forEach((job) => {
-    if (!job?.login?.id) return
-    if (!optionsById.has(job.login.id)) {
-      optionsById.set(job.login.id, {
-        label: job.organisation || job.login.organisation || job.login.username,
+    if (!job || !job.login?.id) return
+    if (!uniqueLoginOptions.has(job.login.id)) {
+      uniqueLoginOptions.set(job.login.id, {
+        label: buildScanLoginLabel(job.organisation, job.login),
         value: job.login.id,
       })
     }
   })
 
-  if (!optionsById.size) {
+  if (!uniqueLoginOptions.size) {
     loginStore.logins.forEach((login) => {
-      optionsById.set(login.id, {
-        label: login.organisation || login.username,
+      uniqueLoginOptions.set(login.id, {
+        label: buildScanLoginLabel(login.organisation, login),
         value: login.id,
       })
     })
   }
 
-  return Array.from(optionsById.values())
+  return Array.from(uniqueLoginOptions.values())
 })
 
 // Keep scanLoginId pointing at a valid login when jobs/logins change
@@ -655,7 +658,6 @@ watch(
   (options) => {
     if (options.length === 1) {
       scanLoginId.value = options[0].value
-      return
     }
     if (!options.find((option) => option.value === scanLoginId.value)) {
       scanLoginId.value = options[0]?.value ?? null
@@ -687,7 +689,7 @@ const onScanOut = async (code) => {
       code,
     }
     $q.notify({ message: scanResult.value.message, color: 'green' })
-    // Refresh jobs and packlists to reflect updated state after scan
+    // Refresh jobs; this also reapplies the selected date filter and reloads packlists
     await fetchJobs()
   } catch (error) {
     const message =
@@ -949,11 +951,11 @@ const sortedPacklists = computed(() =>
   })),
 )
 
-const isScannedOutEnough = (item) => Number(item?.out ?? 0) >= Number(item?.quantity ?? 0)
+const hasMetOrExceededQuantity = (item) => Number(item?.out ?? 0) >= Number(item?.quantity ?? 0)
 
-const getCheckoutRowClass = (rowOrIndex, maybeRow) => {
-  const row = maybeRow || rowOrIndex
-  if (isScannedOutEnough(row)) return 'row-scan-complete'
+const getCheckoutRowClass = (quasarTableRow, directRow) => {
+  const row = directRow || quasarTableRow
+  if (hasMetOrExceededQuantity(row)) return 'row-scan-complete'
   return 'row-scan-pending'
 }
 
