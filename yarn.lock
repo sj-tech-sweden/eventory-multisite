@@ -1201,14 +1201,14 @@
 
 "@primeuix/styled@^0.7.4":
   version "0.7.4"
-  resolved "https://registry.yarnpkg.com/@primeuix/styled/-/styled-0.7.4.tgz#d2108a7fad297dea60d549b2c10ed744dc0cbc0e"
+  resolved "https://registry.npmjs.org/@primeuix/styled/-/styled-0.7.4.tgz"
   integrity sha512-QSO/NpOQg8e9BONWRBx9y8VGMCMYz0J/uKfNJEya/RGEu7ARx0oYW0ugI1N3/KB1AAvyGxzKBzGImbwg0KUiOQ==
   dependencies:
     "@primeuix/utils" "^0.6.1"
 
 "@primeuix/styles@^2.0.3":
   version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@primeuix/styles/-/styles-2.0.3.tgz#e42d14c138fe092683228d65a3f6de17de70d6a0"
+  resolved "https://registry.npmjs.org/@primeuix/styles/-/styles-2.0.3.tgz"
   integrity sha512-2ykAB6BaHzR/6TwF8ShpJTsZrid6cVIEBVlookSdvOdmlWuevGu5vWOScgIwqWwlZcvkFYAGR/SUV3OHCTBMdw==
   dependencies:
     "@primeuix/styled" "^0.7.4"
@@ -1222,12 +1222,12 @@
 
 "@primeuix/utils@^0.6.1", "@primeuix/utils@^0.6.2":
   version "0.6.4"
-  resolved "https://registry.yarnpkg.com/@primeuix/utils/-/utils-0.6.4.tgz#f436eae1be166662d424b8550a97ba0c150819e6"
+  resolved "https://registry.npmjs.org/@primeuix/utils/-/utils-0.6.4.tgz"
   integrity sha512-pZ5f+vj7wSzRhC7KoEQRU5fvYAe+RP9+m39CTscZ3UywCD1Y2o6Fe1rRgklMPSkzUcty2jzkA0zMYkiJBD1hgg==
 
 "@primevue/core@4.5.5":
   version "4.5.5"
-  resolved "https://registry.yarnpkg.com/@primevue/core/-/core-4.5.5.tgz#c450314a6e891f9840c915ccace3055e84d03087"
+  resolved "https://registry.npmjs.org/@primevue/core/-/core-4.5.5.tgz"
   integrity sha512-JpkXhq1ddc70JdsC3CC4dM+UbeeWuCW/8DpS9dNBfrOk824TLSlRlMEGFyVKqRMn5WPQvYLiy3xXfLQeNdSqhQ==
   dependencies:
     "@primeuix/styled" "^0.7.4"
@@ -1235,7 +1235,7 @@
 
 "@primevue/icons@4.5.5":
   version "4.5.5"
-  resolved "https://registry.yarnpkg.com/@primevue/icons/-/icons-4.5.5.tgz#282702f4a21393a9bbde2b326efe1454169f1365"
+  resolved "https://registry.npmjs.org/@primevue/icons/-/icons-4.5.5.tgz"
   integrity sha512-eteOhTdAOXEYE9qW1AOrBBgDxQ2szHJxSkEK1XVdV2TKxGM5FQf03Ovms0VDyZTc16XBIgvwYjXJQS0BPbhPaA==
   dependencies:
     "@primeuix/utils" "^0.6.2"
@@ -1750,7 +1750,7 @@
     semver "^7.6.0"
     ts-api-utils "^2.0.0"
 
-"@typescript-eslint/utils@^6.0.0 || ^7.0.0 || ^8.0.0":
+"@typescript-eslint/utils@^8.0.0":
   version "8.20.0"
   resolved "https://registry.npmjs.org/@typescript-eslint/utils/-/utils-8.20.0.tgz"
   integrity sha512-dq70RUw6UK9ei7vxc4KQtBRk7qkHZv447OUZ6RPQMQl71I3NZxQJX/f32Smr+iqWrB02pHKn2yAdHBb0KNrRMA==
@@ -2998,12 +2998,12 @@ eslint-config-prettier@^10.0.1:
   resolved "https://registry.npmjs.org/eslint-config-prettier/-/eslint-config-prettier-10.1.8.tgz"
   integrity sha512-82GZUjRS0p/jganf6q1rEO25VSoHH0hKPCTrgillPjdI/3bgBhAE1QzHrHTizjpRvy6pGAvKjDJtk2pF9NDq8w==
 
-eslint-plugin-jest@^28.11.0:
-  version "28.14.0"
-  resolved "https://registry.npmjs.org/eslint-plugin-jest/-/eslint-plugin-jest-28.14.0.tgz"
-  integrity sha512-P9s/qXSMTpRTerE2FQ0qJet2gKbcGyFTPAJipoKxmWqR6uuFqIqk8FuEfg5yBieOezVrEfAMZrEwJ6yEp+1MFQ==
+eslint-plugin-jest@^29.0.0:
+  version "29.16.0"
+  resolved "https://registry.npmjs.org/eslint-plugin-jest/-/eslint-plugin-jest-29.16.0.tgz"
+  integrity sha512-0WFBxDHlT2ratGQfnFQEVIsgQJ5cfd+0IV8Kc6U3X2onB8ATLG23voD2Ch5G9fCkEpCPmCMuzW0tbS0kYb8biw==
   dependencies:
-    "@typescript-eslint/utils" "^6.0.0 || ^7.0.0 || ^8.0.0"
+    "@typescript-eslint/utils" "^8.0.0"
 
 eslint-plugin-prettier@^5.2.2:
   version "5.5.6"
@@ -5189,9 +5189,9 @@ prettier-linter-helpers@^1.0.1:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@^3.9.6:
+prettier@^3.3.3:
   version "3.9.6"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.9.6.tgz#b3ea5146515d40fc53f18aa63f74dfab1e10dbf6"
+  resolved "https://registry.npmjs.org/prettier/-/prettier-3.9.6.tgz"
   integrity sha512-OpN0zzVdiaiAhxpuuj5efpIS4sY9j7bY6uR5mnj5yPzGkdkjNKSJeUThPb60Jw29QuAZgA4o+/iB49kFiaBX6g==
 
 pretty-format@^29.7.0:
@@ -5203,9 +5203,9 @@ pretty-format@^29.7.0:
     ansi-styles "^5.0.0"
     react-is "^18.0.0"
 
-primevue@^4.5.5:
+primevue@^4.2.5:
   version "4.5.5"
-  resolved "https://registry.yarnpkg.com/primevue/-/primevue-4.5.5.tgz#9bbaa59583418fab2d2d74bf3b6d30f4c9a851ad"
+  resolved "https://registry.npmjs.org/primevue/-/primevue-4.5.5.tgz"
   integrity sha512-Kv5REIewCdP806QaoU+4nBXfmpzOGFKkZ9qH4KsL6MjiAQVc4PUzypt8erl4r3Vzh3nr3aWZIxkxYRRsLGiX2A==
   dependencies:
     "@primeuix/styled" "^0.7.4"
