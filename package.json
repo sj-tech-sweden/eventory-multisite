@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@primevue/themes": "^4.2.5",
-    "@quasar/cli": "^2.4.1",
+    "@quasar/cli": "^5.0.0",
     "@quasar/extras": "^1.17.0",
     "axios": "^1.18.0",
     "pinia": "^2.0.11",
