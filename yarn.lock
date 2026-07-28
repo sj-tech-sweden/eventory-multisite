@@ -3544,10 +3544,10 @@ globals@^14.0.0:
   resolved "https://registry.npmjs.org/globals/-/globals-14.0.0.tgz"
   integrity sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==
 
-globals@^15.12.0:
-  version "15.15.0"
-  resolved "https://registry.npmjs.org/globals/-/globals-15.15.0.tgz"
-  integrity sha512-7ACyT3wmyp3I61S4fG682L0VA2RGD9otkqGJIwNUMF1SWUombIIk+af1unuDYgMm082aHYwD+mzJvv9Iu8dsgg==
+globals@^17.0.0:
+  version "17.8.0"
+  resolved "https://registry.npmjs.org/globals/-/globals-17.8.0.tgz"
+  integrity sha512-Zz/LMDZScFmkakeL2cTHzf+PbWKdpU3uclqkZT7TjDG58j5WPt0PpA+n9uPI24fZtlw07q0OtEi84K+umsRzqQ==
 
 gopd@^1.2.0:
   version "1.2.0"
@@ -5283,9 +5283,9 @@ qs@~6.15.1:
   dependencies:
     side-channel "^1.1.0"
 
-quasar@^2.23.2:
+quasar@^2.18.1:
   version "2.23.2"
-  resolved "https://registry.yarnpkg.com/quasar/-/quasar-2.23.2.tgz#c9cba75fcc8f867ccd8b28d82daf7fdfae1e0393"
+  resolved "https://registry.npmjs.org/quasar/-/quasar-2.23.2.tgz"
   integrity sha512-4MeD5/RIkXLVvDgrbhZgBsbwd/v8eJaEiLRkuv6nt0xKCoQ2l7TL2KvmOCs7zf/7uh+o3Y5EsM/59jFqnrVWaQ==
 
 queue-microtask@^1.2.2:
@@ -6361,9 +6361,9 @@ vue-eslint-parser@^9.4.3:
     lodash "^4.17.21"
     semver "^7.3.6"
 
-vue-router@^4.6.4:
+vue-router@^4.0.0:
   version "4.6.4"
-  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.6.4.tgz#a0a9cb9ef811a106d249e4bb9313d286718020d8"
+  resolved "https://registry.npmjs.org/vue-router/-/vue-router-4.6.4.tgz"
   integrity sha512-Hz9q5sa33Yhduglwz6g9skT8OBPii+4bFn88w6J+J4MfEo4KRRpmiNG/hHHkdbRFlLBOqxN8y8gf2Fb0MTUgVg==
   dependencies:
     "@vue/devtools-api" "^6.6.4"
