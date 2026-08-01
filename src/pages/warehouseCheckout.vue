@@ -983,7 +983,7 @@ const getCheckoutCardClass = (row) => getCheckoutRowClass(row)
 const checkOutItem = async (item, type, login) => {
   console.log(`Checking in item: ${JSON.stringify(item)}`)
 
-  let url = ''
+  let url
   switch (type) {
     case 'rental':
       url = `/api/pack-list-rentals/${item.id}`

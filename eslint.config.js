@@ -3,7 +3,6 @@ import globals from 'globals'
 import pluginVue from 'eslint-plugin-vue'
 import pluginQuasar from '@quasar/app-vite/eslint'
 import prettierSkipFormatting from '@vue/eslint-config-prettier/skip-formatting'
-import pluginJest from 'eslint-plugin-jest'
 
 export default [
   {
@@ -36,10 +35,26 @@ export default [
   ...pluginVue.configs['flat/essential'],
 
   {
-    files: ['**/*.test.js', '**/*.spec.js'],
-    plugins: {
-      jest: pluginJest,
+    files: ['**/*.{js,cjs,mjs,vue}'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        process: 'readonly',
+        ga: 'readonly',
+        cordova: 'readonly',
+        Capacitor: 'readonly',
+        chrome: 'readonly',
+        browser: 'readonly',
+      },
     },
+  },
+
+  {
+    files: ['**/*.test.js', '**/*.spec.js'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
@@ -60,7 +75,6 @@ export default [
     // add your custom rules here
     rules: {
       'prefer-promise-reject-errors': 'off',
-      ...pluginJest.configs.recommended.rules,
 
       // allow debugger during development only
       'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',

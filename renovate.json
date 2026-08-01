@@ -2,22 +2,5 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
-  ],
-  "packageRules": [
-    {
-      "description": "Block framework and tooling major upgrades that currently require manual migration work",
-      "matchPackageNames": [
-        "@eslint/js",
-        "@quasar/app-vite",
-        "@quasar/quasar-app-extension-qcalendar",
-        "eslint",
-        "eslint-plugin-vue",
-        "primevue"
-      ],
-      "matchUpdateTypes": [
-        "major"
-      ],
-      "enabled": false
-    }
   ]
 }
