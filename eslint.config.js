@@ -42,8 +42,6 @@ export default [
 
       globals: {
         ...globals.browser,
-        ...globals.node,
-        process: 'readonly',
         ga: 'readonly',
         cordova: 'readonly',
         Capacitor: 'readonly',
