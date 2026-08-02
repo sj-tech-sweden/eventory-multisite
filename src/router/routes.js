@@ -1,22 +1,22 @@
 const routes = [
   {
     path: '/',
-    component: () => import('layouts/MainLayout.vue'),
+    component: () => import('../layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue') },
-      { path: '/calendar', component: () => import('pages/CalendarPage.vue') },
-      { path: '/inventory', component: () => import('pages/inventoryManager.vue') },
-      { path: '/login-manager', component: () => import('pages/LoginManager.vue') },
-      { path: '/checkin', component: () => import('src/pages/warehouseCheckin.vue') },
-      { path: '/checkout', component: () => import('src/pages/warehouseCheckout.vue') },
-      { path: '/scan', component: () => import('src/pages/ScanPage.vue') },
+      { path: '', component: () => import('../pages/IndexPage.vue') },
+      { path: '/calendar', component: () => import('../pages/CalendarPage.vue') },
+      { path: '/inventory', component: () => import('../pages/inventoryManager.vue') },
+      { path: '/login-manager', component: () => import('../pages/LoginManager.vue') },
+      { path: '/checkin', component: () => import('../pages/warehouseCheckin.vue') },
+      { path: '/checkout', component: () => import('../pages/warehouseCheckout.vue') },
+      { path: '/scan', component: () => import('../pages/ScanPage.vue') },
       {
         path: '/packlist/:packlistid/:userid',
-        component: () => import('pages/packlistDetail.vue'),
+        component: () => import('../pages/packlistDetail.vue'),
       },
       {
         path: '/inventory-detail/:inventoryid/:userid',
-        component: () => import('pages/inventoryDetail.vue'),
+        component: () => import('../pages/inventoryDetail.vue'),
       },
     ],
   },
@@ -25,7 +25,7 @@ const routes = [
   // but you can also remove it
   {
     path: '/:catchAll(.*)*',
-    component: () => import('pages/ErrorNotFound.vue'),
+    component: () => import('../pages/ErrorNotFound.vue'),
   },
 ]
 
