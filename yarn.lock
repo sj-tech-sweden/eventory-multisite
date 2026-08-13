@@ -736,7 +736,7 @@
 
 "@noble/ed25519@2.3.0":
   version "2.3.0"
-  resolved "https://registry.npmjs.org/@noble/ed25519/-/ed25519-2.3.0.tgz"
+  resolved "https://registry.yarnpkg.com/@noble/ed25519/-/ed25519-2.3.0.tgz#df0dbe424cfd7da4968b956b819c15db5fbe7f21"
   integrity sha512-M7dvXL2B92/M7dw9+gzuydL8qn/jiqNHaoR3Q+cb1q1GHV7uwE17WCyFMG+Y+TZb5izcaXk5TdJRrDUxHXL78A==
 
 "@noble/hashes@1.4.0":
@@ -746,7 +746,7 @@
 
 "@noble/hashes@2.2.0":
   version "2.2.0"
-  resolved "https://registry.npmjs.org/@noble/hashes/-/hashes-2.2.0.tgz"
+  resolved "https://registry.yarnpkg.com/@noble/hashes/-/hashes-2.2.0.tgz#22da1d16a469954fce877055d559900a6c73b63b"
   integrity sha512-IYqDGiTXab6FniAgnSdZwgWbomxpy9FtYvLKs7wCUs2a8RkITG+DFGO1DM9cr+E3/RgADRpFjrKVaJ1z6sjtEg==
 
 "@oxc-project/types@=0.143.0":
@@ -985,14 +985,14 @@
 
 "@primeicons/core@8.0.0":
   version "8.0.0"
-  resolved "https://registry.npmjs.org/@primeicons/core/-/core-8.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/@primeicons/core/-/core-8.0.0.tgz#23a6b1287d949db999c3c3e55281963526d89631"
   integrity sha512-vPif+sXxajXCSL2bmNBP0QYliJONVRgFVpCg9e7hGn7IG18JkMAm4fF5HVld1N4sDATkZQM7jKVxdZ8EK09Giw==
   dependencies:
     "@primeuix/utils" "^0.8.0"
 
 "@primeicons/vue@^8.0.0":
   version "8.0.0"
-  resolved "https://registry.npmjs.org/@primeicons/vue/-/vue-8.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/@primeicons/vue/-/vue-8.0.0.tgz#da2c444a49ea35894235647107464420a265e794"
   integrity sha512-sIqk+kZB9Bn0FqODjDAnNvRXY4Ypky2TInY/oIC3aAJOud1A3FoKruMC8IwiRDz1uHzxYnQqWwtFsfZAgC7qXQ==
   dependencies:
     "@primeicons/core" "8.0.0"
@@ -1000,7 +1000,7 @@
 
 "@primeui/license-manager@^1.0.0":
   version "1.0.0"
-  resolved "https://registry.npmjs.org/@primeui/license-manager/-/license-manager-1.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/@primeui/license-manager/-/license-manager-1.0.0.tgz#f57a8984f8999e6fb82168366fc6bcd9ed279953"
   integrity sha512-89J7r8cclEqoHVwjOX1adPcB/blFSocpzuYlzmd+6r0gxzg2Vd4jM54TKXt9/qwAT/kOv4vYnHKZ6hcP2GFtfA==
   dependencies:
     "@noble/ed25519" "2.3.0"
@@ -1008,7 +1008,7 @@
 
 "@primeuix/motion@^1.0.0":
   version "1.0.0"
-  resolved "https://registry.npmjs.org/@primeuix/motion/-/motion-1.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/@primeuix/motion/-/motion-1.0.0.tgz#625c2423adee9fa22cfd298a595828a8c20bf028"
   integrity sha512-rqpFRKmUVp9BI3YQKdok0rLUwzYShXzuuxy72Kq74xYRV14eR+4+XrIXOdyVs7j7CYV0ajYowiRpJCrVgdrq6A==
   dependencies:
     "@primeuix/utils" "^0.8.0"
@@ -1022,7 +1022,7 @@
 
 "@primeuix/styled@^1.0.0":
   version "1.0.0"
-  resolved "https://registry.npmjs.org/@primeuix/styled/-/styled-1.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/@primeuix/styled/-/styled-1.0.0.tgz#61ce5d9b8b0d3c96774cc7c5b59178cadaafa28b"
   integrity sha512-6SXoeQWwKswSqTv1ygaXNfY7otHo6Rb9mxbKJK5WF8adWlZ6CtwmlNfIP+p8cH/zGccsei/5Bu7IetXlMoZGjQ==
   dependencies:
     "@primeui/license-manager" "^1.0.0"
@@ -1030,7 +1030,7 @@
 
 "@primeuix/styles@^3.0.0":
   version "3.0.0"
-  resolved "https://registry.npmjs.org/@primeuix/styles/-/styles-3.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/@primeuix/styles/-/styles-3.0.0.tgz#67bf7add634bd6b4e03185ed74c2b6f4170ed785"
   integrity sha512-nFsG2V0kbn3Q/fr0EV0Lxy2cKeW1F+WFXyxWI1CxWAAXW34mTCLkDd6OFbN5dP9hrSJOVaeXWzTdoonh1sdklQ==
   dependencies:
     "@primeuix/styled" "^1.0.0"
@@ -1048,26 +1048,26 @@
   integrity sha512-pZ5f+vj7wSzRhC7KoEQRU5fvYAe+RP9+m39CTscZ3UywCD1Y2o6Fe1rRgklMPSkzUcty2jzkA0zMYkiJBD1hgg==
 
 "@primeuix/utils@^0.8.0":
-  version "0.8.0"
-  resolved "https://registry.npmjs.org/@primeuix/utils/-/utils-0.8.0.tgz"
-  integrity sha512-dZSMKU2XJ7W7VDLuFMS/o4k+QYw4SYIpqSNhR/jdasMaaXl8eq0Gt7fTzTwwq7hgfmfOsI6V5xtzUUIvybOJ/w==
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/@primeuix/utils/-/utils-0.8.1.tgz#8b6533ad9861fa564c3198310949b8390b7a3313"
+  integrity sha512-tMtdkSUEl8/6Lc5iNOp7zXMFKJGLyf7mxvS/Hf5GzHVfa2dvsnVmEn0I/i3+80oEmnsVlHhr9+8aM5cKw7vbHA==
 
-"@primevue/core@5.0.0":
-  version "5.0.0"
-  resolved "https://registry.npmjs.org/@primevue/core/-/core-5.0.0.tgz"
-  integrity sha512-VGw1a5m3bSHosAQScg7huvD8ZFQ4cfltmbIuOSx7gsMS2NnYno9BCIq7O2L2H3zmB0pBLfcpdawb3EPeg1LIxw==
+"@primevue/core@5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@primevue/core/-/core-5.0.1.tgz#51d493d37e37d2b4f7375431a8e2bd919687d29e"
+  integrity sha512-RrH5Hs4pnpvTiqwYT1PI1xWj3ARcMjVEd8fJlwHyr0HBZlB1stneCphx697uJZwZQ3LCE56HO+YKsNIWlTtA4w==
   dependencies:
     "@primeui/license-manager" "^1.0.0"
     "@primeuix/styled" "^1.0.0"
     "@primeuix/utils" "^0.8.0"
 
-"@primevue/icons@5.0.0":
-  version "5.0.0"
-  resolved "https://registry.npmjs.org/@primevue/icons/-/icons-5.0.0.tgz"
-  integrity sha512-DyrtQhmLRiIkldjm5jmuqiFeNN05n4VWd1sw4+WfJ0Zlb+5T4YASw6CGtCITPzHVYyx6XuuEMifruzc8OVpQrw==
+"@primevue/icons@5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@primevue/icons/-/icons-5.0.1.tgz#11b23055197fbb0bf6381bdfecf28bd12e93a936"
+  integrity sha512-Vh/GmBGwTlhfey0NUXb89h7VvT4kh7QQIyOdPsii44VJOhFw5HnF3gDw58I7WEvkvHWNVinicMbCb7btLhaqEw==
   dependencies:
     "@primeuix/utils" "^0.8.0"
-    "@primevue/core" "5.0.0"
+    "@primevue/core" "5.0.1"
 
 "@primevue/themes@^4.2.5":
   version "4.5.4"
@@ -1142,16 +1142,16 @@
   resolved "https://registry.npmjs.org/@quasar/extras/-/extras-2.0.3.tgz"
   integrity sha512-tTw+5+2ZOugCpkagP20e/LJf7BgQyAQPlwyRwMYe2UpN1F4zYCZhvoAPio1hG2hr5FOlEiJVxSINJHhpdx5NZA==
 
-"@quasar/quasar-app-extension-qcalendar@^5.2.2":
+"@quasar/quasar-app-extension-qcalendar@^5.2.0":
   version "5.2.2"
-  resolved "https://registry.yarnpkg.com/@quasar/quasar-app-extension-qcalendar/-/quasar-app-extension-qcalendar-5.2.2.tgz#0b40c6021388dfcca6684da838cb6eec9ccecb96"
+  resolved "https://registry.npmjs.org/@quasar/quasar-app-extension-qcalendar/-/quasar-app-extension-qcalendar-5.2.2.tgz"
   integrity sha512-y/7orNdbgdp0baqmbCAx9l5dorlaKJmCXDggOBny699tkRqNIXwObBRgSmqkfpa9vrHJ/8znjGhq5uG+G+5/Zw==
   dependencies:
     "@quasar/quasar-ui-qcalendar" "^5.2.2"
 
 "@quasar/quasar-ui-qcalendar@^5.2.2":
   version "5.2.2"
-  resolved "https://registry.yarnpkg.com/@quasar/quasar-ui-qcalendar/-/quasar-ui-qcalendar-5.2.2.tgz#8def7ee2c3485881f87591fa7263083957ec3692"
+  resolved "https://registry.npmjs.org/@quasar/quasar-ui-qcalendar/-/quasar-ui-qcalendar-5.2.2.tgz"
   integrity sha512-YHr9cUqpXGBBu8v6bYVTlDoY5GT98x9d94iC7Im/j4rSMFRJ53vUfRWzG/hLN2PibjeUJKgLV7ucswkUneSY6A==
   dependencies:
     "@timestamp-js/core" "1.0.0"
@@ -1279,7 +1279,7 @@
 
 "@timestamp-js/core@1.0.0":
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@timestamp-js/core/-/core-1.0.0.tgz#630a34f357ad04f3f4b2569cc5939104c0fe3fd2"
+  resolved "https://registry.npmjs.org/@timestamp-js/core/-/core-1.0.0.tgz"
   integrity sha512-Wed8du4NBL/j4fItmrn1TCXedFdUse//nTVlWiJzJzs3vXFbTCbxFaWQd0xQQkzGor+lrQTKw7xJSUwsr1/N5g==
 
 "@tybys/wasm-util@^0.10.3":
@@ -2705,9 +2705,9 @@ glob@^7.1.4:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
-globals@^17.11.0:
+globals@^17.0.0:
   version "17.11.0"
-  resolved "https://registry.yarnpkg.com/globals/-/globals-17.11.0.tgz#d643485bb30220d7751e511cf4f68c73d3870d87"
+  resolved "https://registry.npmjs.org/globals/-/globals-17.11.0.tgz"
   integrity sha512-Z2I8hM+PbJDXQDq3Icgpzv+mPdwr68iZUU9d5WW4FuXfDUQfkZaZuvjMv42/5crNyw154+9+VWXbYrUgDXbxNw==
 
 gopd@^1.2.0:
@@ -3973,10 +3973,10 @@ pretty-format@30.4.1:
     react-is-18 "npm:react-is@^18.3.1"
     react-is-19 "npm:react-is@^19.2.5"
 
-primevue@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.npmjs.org/primevue/-/primevue-5.0.0.tgz"
-  integrity sha512-o0MtP6Dxa5QFZuskBWoiLD7aM/V6emqqJJnd+L2nNSfH4PrQsNpqSVPZODSdNJfKXAD9ekjTAJ+QyHycKCmF3Q==
+primevue@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/primevue/-/primevue-5.0.1.tgz#6287a097f6dc35e69450312333755a2c3c4332e6"
+  integrity sha512-nnQmoerXzrDDIeVXw8Ve1JnIaDPapwN51tOf5s4saih69ocZNVs2U1nXmEdc0ajJwpTzh/Wr3lLbub5cyItQ2Q==
   dependencies:
     "@primeicons/vue" "^8.0.0"
     "@primeui/license-manager" "^1.0.0"
@@ -3984,8 +3984,8 @@ primevue@^5.0.0:
     "@primeuix/styled" "^1.0.0"
     "@primeuix/styles" "^3.0.0"
     "@primeuix/utils" "^0.8.0"
-    "@primevue/core" "5.0.0"
-    "@primevue/icons" "5.0.0"
+    "@primevue/core" "5.0.1"
+    "@primevue/icons" "5.0.1"
 
 proper-lockfile@^4.1.2:
   version "4.1.2"
