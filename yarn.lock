@@ -1142,19 +1142,19 @@
   resolved "https://registry.npmjs.org/@quasar/extras/-/extras-2.0.3.tgz"
   integrity sha512-tTw+5+2ZOugCpkagP20e/LJf7BgQyAQPlwyRwMYe2UpN1F4zYCZhvoAPio1hG2hr5FOlEiJVxSINJHhpdx5NZA==
 
-"@quasar/quasar-app-extension-qcalendar@^5.2.0":
-  version "5.2.1"
-  resolved "https://registry.npmjs.org/@quasar/quasar-app-extension-qcalendar/-/quasar-app-extension-qcalendar-5.2.1.tgz"
-  integrity sha512-c2nNC/F9uVAIpBe46i9+JW/8dGKCbjpm+7nFDbfNOwA2cbEbRGKvMntOec9b6XYYrcVeesi1M6GiuQ1EtXnNig==
+"@quasar/quasar-app-extension-qcalendar@^5.2.2":
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/@quasar/quasar-app-extension-qcalendar/-/quasar-app-extension-qcalendar-5.2.2.tgz#0b40c6021388dfcca6684da838cb6eec9ccecb96"
+  integrity sha512-y/7orNdbgdp0baqmbCAx9l5dorlaKJmCXDggOBny699tkRqNIXwObBRgSmqkfpa9vrHJ/8znjGhq5uG+G+5/Zw==
   dependencies:
-    "@quasar/quasar-ui-qcalendar" "^5.2.1"
+    "@quasar/quasar-ui-qcalendar" "^5.2.2"
 
-"@quasar/quasar-ui-qcalendar@^5.2.1":
-  version "5.2.1"
-  resolved "https://registry.npmjs.org/@quasar/quasar-ui-qcalendar/-/quasar-ui-qcalendar-5.2.1.tgz"
-  integrity sha512-dk3d90ovFgVA4KZIn1i0Ndvb/TRfEtS5uXlse2VkkMbrH+k3xucK025eU7hbqpxVTMggpDPX5qrD0OC9j3H5Zg==
+"@quasar/quasar-ui-qcalendar@^5.2.2":
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/@quasar/quasar-ui-qcalendar/-/quasar-ui-qcalendar-5.2.2.tgz#8def7ee2c3485881f87591fa7263083957ec3692"
+  integrity sha512-YHr9cUqpXGBBu8v6bYVTlDoY5GT98x9d94iC7Im/j4rSMFRJ53vUfRWzG/hLN2PibjeUJKgLV7ucswkUneSY6A==
   dependencies:
-    "@timestamp-js/core" "0.1.0-rc.5"
+    "@timestamp-js/core" "1.0.0"
 
 "@quasar/render-ssr-error@^2.2.4":
   version "2.2.4"
@@ -1277,10 +1277,10 @@
   dependencies:
     "@sinonjs/commons" "^3.0.1"
 
-"@timestamp-js/core@0.1.0-rc.5":
-  version "0.1.0-rc.5"
-  resolved "https://registry.npmjs.org/@timestamp-js/core/-/core-0.1.0-rc.5.tgz"
-  integrity sha512-UA+xWllEmYdCAb9xkKKtgxe7Y89+YjvOBBkVkuNT3/YAzi+GoQJKfiUzQOjXjqwmYjjyPPK0GHHd0OCC/9JNeg==
+"@timestamp-js/core@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@timestamp-js/core/-/core-1.0.0.tgz#630a34f357ad04f3f4b2569cc5939104c0fe3fd2"
+  integrity sha512-Wed8du4NBL/j4fItmrn1TCXedFdUse//nTVlWiJzJzs3vXFbTCbxFaWQd0xQQkzGor+lrQTKw7xJSUwsr1/N5g==
 
 "@tybys/wasm-util@^0.10.3":
   version "0.10.3"
@@ -3678,7 +3678,7 @@ normalize-path@^3.0.0:
 
 nostics@^1.1.4:
   version "1.2.0"
-  resolved "https://registry.yarnpkg.com/nostics/-/nostics-1.2.0.tgz#1362df6de2ca8456b521914501abf6c52c4d7fb5"
+  resolved "https://registry.npmjs.org/nostics/-/nostics-1.2.0.tgz"
   integrity sha512-FGqEfhQjrvo1lL8KFifdTQiNwwQHJxC1jtYE1Rc54qF/jxONUNL+kC9gS1krX8Q65PgrQ5fCqH/I4NhWBvdSqg==
 
 npm-run-path@^4.0.1:
@@ -3870,9 +3870,9 @@ picomatch@^4.0.3, picomatch@^4.0.4, picomatch@^4.0.5:
   resolved "https://registry.npmjs.org/picomatch/-/picomatch-4.0.5.tgz"
   integrity sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==
 
-pinia@^4.0.3:
+pinia@^4.0.0:
   version "4.0.3"
-  resolved "https://registry.yarnpkg.com/pinia/-/pinia-4.0.3.tgz#9cf9e353b3602e24a96e4ca4425817ecb9993292"
+  resolved "https://registry.npmjs.org/pinia/-/pinia-4.0.3.tgz"
   integrity sha512-XMQqpvjgG7LMqVhhFUzKLT4KEbsYbfZZ0CZU9PgdFm1O2VKBmIkykL8+SfNhOaT7sR0wT6BEgKT0YNDYWgmVRA==
   dependencies:
     nostics "^1.1.4"
