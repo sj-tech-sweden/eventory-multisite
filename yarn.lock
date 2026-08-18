@@ -4028,10 +4028,10 @@ quansync@^0.2.11:
   resolved "https://registry.npmjs.org/quansync/-/quansync-0.2.11.tgz"
   integrity sha512-AifT7QEbW9Nri4tAwR5M/uzpBuqfZf+zwaEM/QkzEjj7NBuFD2rBuy0K3dE+8wltbezDV7JMA0WfnCPYRSYbXA==
 
-quasar@^2.23.4:
-  version "2.25.0"
-  resolved "https://registry.npmjs.org/quasar/-/quasar-2.25.0.tgz"
-  integrity sha512-orpGzerOcbPHKT0ah6tljzQlYiY5a+qcCmIXzKSEa9pKgyfP6BfPjmi1k46yOddurbnXosjCZt3/qZUv2nMeIw==
+quasar@^2.25.1:
+  version "2.25.1"
+  resolved "https://registry.yarnpkg.com/quasar/-/quasar-2.25.1.tgz#5d08d41d646b43291546f4d2be062d18f7cc56a5"
+  integrity sha512-wDc+rLS0MHzp3wl1ILo7FXk6V15aotljHDO8DVpBlm1foATO4jbY8QTfZJW5e8tqAD/zJw6paHC6BeV4eSPMwg==
 
 range-parser@^1.2.1:
   version "1.3.0"
