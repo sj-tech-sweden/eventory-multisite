@@ -1145,17 +1145,17 @@
   resolved "https://registry.npmjs.org/@quasar/extras/-/extras-2.0.4.tgz"
   integrity sha512-JWls5J+xkgEn6u86NSBLRUXf92RSTlImmYNcF77JtbOwuZgQfQTg7RpLskqRTmzpU3Kkpd3TLDcVT0xwWwiphA==
 
-"@quasar/quasar-app-extension-qcalendar@^5.2.0":
-  version "5.2.2"
-  resolved "https://registry.npmjs.org/@quasar/quasar-app-extension-qcalendar/-/quasar-app-extension-qcalendar-5.2.2.tgz"
-  integrity sha512-y/7orNdbgdp0baqmbCAx9l5dorlaKJmCXDggOBny699tkRqNIXwObBRgSmqkfpa9vrHJ/8znjGhq5uG+G+5/Zw==
+"@quasar/quasar-app-extension-qcalendar@^5.3.0":
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/@quasar/quasar-app-extension-qcalendar/-/quasar-app-extension-qcalendar-5.3.0.tgz#146b230a78fa892e1b8184343cd8e54b13339134"
+  integrity sha512-oH/W3pMO6OWNV/U1mx5uLXFzGkNmLHNxcm1HWJQT0Tqyvd4T0hfYvh3Oqgq5t0GEwN84aOepwCJQqtR5akSLCA==
   dependencies:
-    "@quasar/quasar-ui-qcalendar" "^5.2.2"
+    "@quasar/quasar-ui-qcalendar" "^5.3.0"
 
-"@quasar/quasar-ui-qcalendar@^5.2.2":
-  version "5.2.2"
-  resolved "https://registry.npmjs.org/@quasar/quasar-ui-qcalendar/-/quasar-ui-qcalendar-5.2.2.tgz"
-  integrity sha512-YHr9cUqpXGBBu8v6bYVTlDoY5GT98x9d94iC7Im/j4rSMFRJ53vUfRWzG/hLN2PibjeUJKgLV7ucswkUneSY6A==
+"@quasar/quasar-ui-qcalendar@^5.3.0":
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/@quasar/quasar-ui-qcalendar/-/quasar-ui-qcalendar-5.3.0.tgz#7734bf7d6c276dfe7d6fd4e2771f1ce50e70f323"
+  integrity sha512-i8sp5GFLYW7Szy0ZLmsfITvChnkMEThdollAEsHFx4BdtgxvOZ3Q4KtQlJ6/rwl8mkp6v9ejxPLwatwz//Aw6Q==
   dependencies:
     "@timestamp-js/core" "1.0.0"
 
@@ -1282,7 +1282,7 @@
 
 "@timestamp-js/core@1.0.0":
   version "1.0.0"
-  resolved "https://registry.npmjs.org/@timestamp-js/core/-/core-1.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/@timestamp-js/core/-/core-1.0.0.tgz#630a34f357ad04f3f4b2569cc5939104c0fe3fd2"
   integrity sha512-Wed8du4NBL/j4fItmrn1TCXedFdUse//nTVlWiJzJzs3vXFbTCbxFaWQd0xQQkzGor+lrQTKw7xJSUwsr1/N5g==
 
 "@tybys/wasm-util@^0.10.3":
