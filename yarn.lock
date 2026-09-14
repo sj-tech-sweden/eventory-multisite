@@ -1139,10 +1139,10 @@
     kolorist "^1.8.0"
     open "^11.0.2"
 
-"@quasar/extras@^2.0.0":
-  version "2.0.4"
-  resolved "https://registry.npmjs.org/@quasar/extras/-/extras-2.0.4.tgz"
-  integrity sha512-JWls5J+xkgEn6u86NSBLRUXf92RSTlImmYNcF77JtbOwuZgQfQTg7RpLskqRTmzpU3Kkpd3TLDcVT0xwWwiphA==
+"@quasar/extras@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@quasar/extras/-/extras-2.1.0.tgz#c104dda64296fc87dd36509ea8758074aa795e8b"
+  integrity sha512-WCqHXr3loA9bP1DUuzmCwuNXnHa9GKosAtjwJnr1DpngO68a0JoiyVuoXzc760tCBArdFLD/YAUHvItPbk6V2Q==
 
 "@quasar/quasar-app-extension-qcalendar@^5.2.0":
   version "5.3.0"
@@ -1290,9 +1290,9 @@
   integrity sha512-Wed8du4NBL/j4fItmrn1TCXedFdUse//nTVlWiJzJzs3vXFbTCbxFaWQd0xQQkzGor+lrQTKw7xJSUwsr1/N5g==
 
 "@tybys/wasm-util@^0.10.3":
-  version "0.10.3"
-  resolved "https://registry.yarnpkg.com/@tybys/wasm-util/-/wasm-util-0.10.3.tgz#015cba9e9dd47ce14d03d2a8c5d547bfb169665d"
-  integrity sha512-F3fo1MYrRJYL3zER0OUOmkutjr1Vp23m7OsSgp7nq4SP6OqX6C/56XFIPAl5bt3zaBRjmW7SGz3u/6LwFpYcOg==
+  version "0.10.4"
+  resolved "https://registry.yarnpkg.com/@tybys/wasm-util/-/wasm-util-0.10.4.tgz#3e85ecb266f9d1722250e89bc69528615720b154"
+  integrity sha512-W3c4gRigFS0T/Ma4qIYF3GDAc5AQdHb1yL5znJT1Zv1YaD9Kitx656wBjvr19qbiosmZT8lWDM5BEMynUqX65A==
   dependencies:
     tslib "^2.4.0"
 
@@ -4029,9 +4029,9 @@ quansync@^0.2.11:
   resolved "https://registry.npmjs.org/quansync/-/quansync-0.2.11.tgz"
   integrity sha512-AifT7QEbW9Nri4tAwR5M/uzpBuqfZf+zwaEM/QkzEjj7NBuFD2rBuy0K3dE+8wltbezDV7JMA0WfnCPYRSYbXA==
 
-quasar@^2.32.2:
+quasar@^2.23.4:
   version "2.32.2"
-  resolved "https://registry.yarnpkg.com/quasar/-/quasar-2.32.2.tgz#4db7a74bca5143c83c493a93b0bd184867fbc12d"
+  resolved "https://registry.npmjs.org/quasar/-/quasar-2.32.2.tgz"
   integrity sha512-IqQHHYoYL8bfFDAwy5E5X1xv7VpMAdhFHjSaLycueRdLOkXMbntUUphAIof8Q/wgvKQcskYflGV9/OyIPvbkLA==
 
 range-parser@^1.2.1:
