@@ -1144,10 +1144,10 @@
     kolorist "^1.8.0"
     open "^11.0.2"
 
-"@quasar/extras@^2.0.0":
-  version "2.0.4"
-  resolved "https://registry.npmjs.org/@quasar/extras/-/extras-2.0.4.tgz"
-  integrity sha512-JWls5J+xkgEn6u86NSBLRUXf92RSTlImmYNcF77JtbOwuZgQfQTg7RpLskqRTmzpU3Kkpd3TLDcVT0xwWwiphA==
+"@quasar/extras@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@quasar/extras/-/extras-2.1.0.tgz#c104dda64296fc87dd36509ea8758074aa795e8b"
+  integrity sha512-WCqHXr3loA9bP1DUuzmCwuNXnHa9GKosAtjwJnr1DpngO68a0JoiyVuoXzc760tCBArdFLD/YAUHvItPbk6V2Q==
 
 "@quasar/quasar-app-extension-qcalendar@^5.2.0":
   version "5.3.0"
