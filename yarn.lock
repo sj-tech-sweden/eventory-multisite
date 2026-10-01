@@ -1144,16 +1144,16 @@
   resolved "https://registry.npmjs.org/@quasar/extras/-/extras-2.1.0.tgz"
   integrity sha512-WCqHXr3loA9bP1DUuzmCwuNXnHa9GKosAtjwJnr1DpngO68a0JoiyVuoXzc760tCBArdFLD/YAUHvItPbk6V2Q==
 
-"@quasar/quasar-app-extension-qcalendar@^5.3.1":
+"@quasar/quasar-app-extension-qcalendar@^5.2.0":
   version "5.3.1"
-  resolved "https://registry.yarnpkg.com/@quasar/quasar-app-extension-qcalendar/-/quasar-app-extension-qcalendar-5.3.1.tgz#bb5bc5198a693e3b343a985accde8c64afbefc4b"
+  resolved "https://registry.npmjs.org/@quasar/quasar-app-extension-qcalendar/-/quasar-app-extension-qcalendar-5.3.1.tgz"
   integrity sha512-dfo6Dh/5cY11gMwL91hwjpUepm7/T/00ROMYr5CyZLBvd6NduOrDGJCVkPH+Y+7UtJlHycRs3xBVuRYXiZDJoQ==
   dependencies:
     "@quasar/quasar-ui-qcalendar" "^5.3.1"
 
 "@quasar/quasar-ui-qcalendar@^5.3.1":
   version "5.3.1"
-  resolved "https://registry.yarnpkg.com/@quasar/quasar-ui-qcalendar/-/quasar-ui-qcalendar-5.3.1.tgz#524452fbb455759446ee56deaedc157f5ae9be56"
+  resolved "https://registry.npmjs.org/@quasar/quasar-ui-qcalendar/-/quasar-ui-qcalendar-5.3.1.tgz"
   integrity sha512-35O6LkFzcUUOphrsIk35uZ5HCO0AOjtdYD37LG9riYxEodk4Cv/2B0QysY13rKhcAS91dKtQcpeZpR6slBt5FQ==
   dependencies:
     "@timestamp-js/core" "1.0.0"
@@ -1286,7 +1286,7 @@
 
 "@timestamp-js/core@1.0.0":
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@timestamp-js/core/-/core-1.0.0.tgz#630a34f357ad04f3f4b2569cc5939104c0fe3fd2"
+  resolved "https://registry.npmjs.org/@timestamp-js/core/-/core-1.0.0.tgz"
   integrity sha512-Wed8du4NBL/j4fItmrn1TCXedFdUse//nTVlWiJzJzs3vXFbTCbxFaWQd0xQQkzGor+lrQTKw7xJSUwsr1/N5g==
 
 "@tybys/wasm-util@^0.10.3":
@@ -1887,7 +1887,7 @@ brace-expansion@^2.0.2:
 
 brace-expansion@^5.0.8:
   version "5.0.12"
-  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-5.0.12.tgz#995fbb4750a77c4d16a7dc942ff2ca6ef8e675ec"
+  resolved "https://registry.npmjs.org/brace-expansion/-/brace-expansion-5.0.12.tgz"
   integrity sha512-YovQ3rzhaLMIrDjNDMkNS01tea93qhEhG5xy8f6+R0l+dw3Ki+5sCoIoI942iuLZTHWogWktgwVDhU09iNEimQ==
   dependencies:
     balanced-match "^4.0.2"
@@ -2708,10 +2708,10 @@ glob@^13.0.6:
     minipass "^7.1.3"
     path-scurry "^2.0.2"
 
-globals@^17.0.0:
-  version "17.12.0"
-  resolved "https://registry.npmjs.org/globals/-/globals-17.12.0.tgz"
-  integrity sha512-cezEd/DTyyht9cvSSURyygXPfy04GtWO/5e6ZPvH7fCtjKz9PYOmuawphw1Ctd1f6C+5JypXfGD7ahNMXvevBA==
+globals@^17.13.0:
+  version "17.13.0"
+  resolved "https://registry.yarnpkg.com/globals/-/globals-17.13.0.tgz#ab2134b5ededbf2fbe2831dd0acc36f4f1ddeac5"
+  integrity sha512-RwMTC61u7hrG3ZJMkZQOK4JLJrKS8QtoTii63EmWvFXHqycY9FObBJQCbsLxSO8kjKhWE5kV1GC+Vb1g3RI0Zg==
 
 gopd@^1.2.0:
   version "1.2.0"
@@ -4030,9 +4030,9 @@ quansync@^0.2.11:
   resolved "https://registry.npmjs.org/quansync/-/quansync-0.2.11.tgz"
   integrity sha512-AifT7QEbW9Nri4tAwR5M/uzpBuqfZf+zwaEM/QkzEjj7NBuFD2rBuy0K3dE+8wltbezDV7JMA0WfnCPYRSYbXA==
 
-quasar@^2.34.0:
+quasar@^2.23.4:
   version "2.34.0"
-  resolved "https://registry.yarnpkg.com/quasar/-/quasar-2.34.0.tgz#1f32d86090c2555c83bd0fa21881a3dc8cce6ca1"
+  resolved "https://registry.npmjs.org/quasar/-/quasar-2.34.0.tgz"
   integrity sha512-FwTTqffFyXtEMaEebo5olOHGAJtCZB7Gn6BtWBdypjYOarM6azllrgvVVIQp23qZ0W9leZDFqKRXFm87tua3DA==
 
 range-parser@^1.2.1:
