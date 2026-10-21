@@ -767,20 +767,10 @@
   dependencies:
     "@tybys/wasm-util" "^0.10.3"
 
-"@noble/ed25519@2.3.0":
-  version "2.3.0"
-  resolved "https://registry.npmjs.org/@noble/ed25519/-/ed25519-2.3.0.tgz"
-  integrity sha512-M7dvXL2B92/M7dw9+gzuydL8qn/jiqNHaoR3Q+cb1q1GHV7uwE17WCyFMG+Y+TZb5izcaXk5TdJRrDUxHXL78A==
-
 "@noble/hashes@1.4.0":
   version "1.4.0"
   resolved "https://registry.npmjs.org/@noble/hashes/-/hashes-1.4.0.tgz"
   integrity sha512-V1JJ1WTRUqHHrOSh597hURcMqVKVGL/ea3kv0gSnEdsEZ0/+VyPghM1lMNGc00z7CIQorSvbKpuJkxvuHbvdbg==
-
-"@noble/hashes@2.2.0":
-  version "2.2.0"
-  resolved "https://registry.npmjs.org/@noble/hashes/-/hashes-2.2.0.tgz"
-  integrity sha512-IYqDGiTXab6FniAgnSdZwgWbomxpy9FtYvLKs7wCUs2a8RkITG+DFGO1DM9cr+E3/RgADRpFjrKVaJ1z6sjtEg==
 
 "@oxc-project/types@=0.150.0":
   version "0.150.0"
@@ -1015,32 +1005,29 @@
   resolved "https://registry.npmjs.org/@pkgr/core/-/core-0.3.6.tgz"
   integrity sha512-SEeaJLb3qBNF/OaXnaR1NmmBbFYk1zC0ZH/52fATcRPLFg/p791YrcyFFy44Bo9sLaGuSuLp5Q6axbb/O+v/RA==
 
-"@primeicons/core@8.0.0":
-  version "8.0.0"
-  resolved "https://registry.npmjs.org/@primeicons/core/-/core-8.0.0.tgz"
-  integrity sha512-vPif+sXxajXCSL2bmNBP0QYliJONVRgFVpCg9e7hGn7IG18JkMAm4fF5HVld1N4sDATkZQM7jKVxdZ8EK09Giw==
+"@primeicons/core@8.0.2":
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/@primeicons/core/-/core-8.0.2.tgz#83de60b1b73a3df891a1e64cd673bad91a804642"
+  integrity sha512-VySryvfIQH2xzNVXISIQg357gAt4oFYX2vKy27tWMB7UvEHu/gjRpeilBty3LBln7oVuAdFLPYOWr/FtTH8eJw==
   dependencies:
     "@primeuix/utils" "^0.8.0"
 
 "@primeicons/vue@^8.0.0":
-  version "8.0.0"
-  resolved "https://registry.npmjs.org/@primeicons/vue/-/vue-8.0.0.tgz"
-  integrity sha512-sIqk+kZB9Bn0FqODjDAnNvRXY4Ypky2TInY/oIC3aAJOud1A3FoKruMC8IwiRDz1uHzxYnQqWwtFsfZAgC7qXQ==
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/@primeicons/vue/-/vue-8.0.2.tgz#e4a7757c548c0139b9ff87e2d07eaef695549906"
+  integrity sha512-HRb3kgnj0XbqZvYCkgnF5LSAKNoRAgU8hwXcVqeCSKQKO3uJoI4oYDtEwULM8Rxy2avhiJuozlVHugskDF4HdQ==
   dependencies:
-    "@primeicons/core" "8.0.0"
+    "@primeicons/core" "8.0.2"
     "@primeuix/utils" "^0.8.0"
 
 "@primeui/license-manager@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@primeui/license-manager/-/license-manager-1.0.0.tgz"
-  integrity sha512-89J7r8cclEqoHVwjOX1adPcB/blFSocpzuYlzmd+6r0gxzg2Vd4jM54TKXt9/qwAT/kOv4vYnHKZ6hcP2GFtfA==
-  dependencies:
-    "@noble/ed25519" "2.3.0"
-    "@noble/hashes" "2.2.0"
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@primeui/license-manager/-/license-manager-1.1.0.tgz#d19ec4c6c4831b9b7b64a91a35b8c83cb50e69ed"
+  integrity sha512-irjhOGs6Xjwh1JhMyXtdUsYCsve6kBySZzDUhS/mWxsjwQm/wSN7oulyP/f5huJKdhZSzaN6rVApwpp4nDWE1g==
 
 "@primeuix/motion@^1.0.0":
   version "1.0.0"
-  resolved "https://registry.npmjs.org/@primeuix/motion/-/motion-1.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/@primeuix/motion/-/motion-1.0.0.tgz#625c2423adee9fa22cfd298a595828a8c20bf028"
   integrity sha512-rqpFRKmUVp9BI3YQKdok0rLUwzYShXzuuxy72Kq74xYRV14eR+4+XrIXOdyVs7j7CYV0ajYowiRpJCrVgdrq6A==
   dependencies:
     "@primeuix/utils" "^0.8.0"
@@ -1052,20 +1039,19 @@
   dependencies:
     "@primeuix/utils" "^0.6.1"
 
-"@primeuix/styled@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@primeuix/styled/-/styled-1.0.0.tgz"
-  integrity sha512-6SXoeQWwKswSqTv1ygaXNfY7otHo6Rb9mxbKJK5WF8adWlZ6CtwmlNfIP+p8cH/zGccsei/5Bu7IetXlMoZGjQ==
+"@primeuix/styled@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@primeuix/styled/-/styled-1.1.0.tgz#60bc1b5cb6f007993363d2c599a96243bea0ee18"
+  integrity sha512-Bkd8hRgui1quRPmi/FBRfTDS6/mwaUUiOFPSWZpUpqMqs3mz4ESrDG/oylh7knJsTxuLWa4YbwqPWy6c/Ray3w==
   dependencies:
-    "@primeui/license-manager" "^1.0.0"
-    "@primeuix/utils" "^0.8.0"
+    "@primeuix/utils" "^0.8.3"
 
-"@primeuix/styles@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/@primeuix/styles/-/styles-3.0.0.tgz"
-  integrity sha512-nFsG2V0kbn3Q/fr0EV0Lxy2cKeW1F+WFXyxWI1CxWAAXW34mTCLkDd6OFbN5dP9hrSJOVaeXWzTdoonh1sdklQ==
+"@primeuix/styles@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@primeuix/styles/-/styles-3.0.2.tgz#2951e2c1320967951a4f7dc26af8804c1193e143"
+  integrity sha512-Xt02aEFPIINCcd2M0vVz95u3fsJnZFP31jxjx7qFDVKhHrCI2g9pOkNQszdNoF1dmkvazxGjy0Ch2n8dSOHKbg==
   dependencies:
-    "@primeuix/styled" "^1.0.0"
+    "@primeuix/styled" "^1.1.0"
 
 "@primeuix/themes@^2.0.2":
   version "2.0.3"
@@ -1079,27 +1065,27 @@
   resolved "https://registry.npmjs.org/@primeuix/utils/-/utils-0.6.4.tgz"
   integrity sha512-pZ5f+vj7wSzRhC7KoEQRU5fvYAe+RP9+m39CTscZ3UywCD1Y2o6Fe1rRgklMPSkzUcty2jzkA0zMYkiJBD1hgg==
 
-"@primeuix/utils@^0.8.0":
-  version "0.8.0"
-  resolved "https://registry.npmjs.org/@primeuix/utils/-/utils-0.8.0.tgz"
-  integrity sha512-dZSMKU2XJ7W7VDLuFMS/o4k+QYw4SYIpqSNhR/jdasMaaXl8eq0Gt7fTzTwwq7hgfmfOsI6V5xtzUUIvybOJ/w==
+"@primeuix/utils@^0.8.0", "@primeuix/utils@^0.8.3":
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/@primeuix/utils/-/utils-0.8.3.tgz#fff5dbd2e9c3c5953d340ef82b9a0bc872f3588f"
+  integrity sha512-UyFtnzxHfG7UqbOqUsjMXpe96h36eDre9Iw+zkZuJHsplHdoXNWgovDkoGZNxw4V5ZUHP1Y3pIu0kJw0OhmT0g==
 
-"@primevue/core@5.0.2":
-  version "5.0.2"
-  resolved "https://registry.npmjs.org/@primevue/core/-/core-5.0.2.tgz"
-  integrity sha512-/W/C3jw2uEWbcX8m0Ze516Z54kVLiO+V6irRZDBNFqNhtE051mHON4HOnfWNfy21xOFQIiMua1c4NeOtcTgfyQ==
+"@primevue/core@5.0.3":
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/@primevue/core/-/core-5.0.3.tgz#ca847b9b4f0e0b708bd21956975512f60b382d78"
+  integrity sha512-ixXNAm+ZucyIJLXIdysiVgiuSbdC/X033g8IbYDXKPM3A8P+xJmwUBf7LUmALQSxNyJshrOOQrUg6Q8x9YbTEg==
   dependencies:
     "@primeui/license-manager" "^1.0.0"
-    "@primeuix/styled" "^1.0.0"
-    "@primeuix/utils" "^0.8.0"
+    "@primeuix/styled" "^1.1.0"
+    "@primeuix/utils" "^0.8.3"
 
-"@primevue/icons@5.0.2":
-  version "5.0.2"
-  resolved "https://registry.npmjs.org/@primevue/icons/-/icons-5.0.2.tgz"
-  integrity sha512-pZtcnzL0Ui5TAGuaLmN6Fot4jUJEQ5WwvSVU2qPm+tHgpIz/87jX/j+0CT+O5uc/h8HUH8B3rcl+FEZh7b3PKg==
+"@primevue/icons@5.0.3":
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/@primevue/icons/-/icons-5.0.3.tgz#7987751d48516b3f22afe8b3c8b37727eeb1ad0d"
+  integrity sha512-oCLPneUC4tDGNAgknDp/bePbmdOwT7lv/r0ti2vllrGSYmx4H8Ur3wli0IQv3LoAZSTwnbBGYNI0LWZgnOpIvQ==
   dependencies:
-    "@primeuix/utils" "^0.8.0"
-    "@primevue/core" "5.0.2"
+    "@primeuix/utils" "^0.8.3"
+    "@primevue/core" "5.0.3"
 
 "@primevue/themes@^4.2.5":
   version "4.5.4"
@@ -4096,19 +4082,19 @@ pretty-format@30.5.1:
     "@jest/schemas" "30.5.0"
     ansi-styles "^5.2.0"
 
-primevue@^5.0.0:
-  version "5.0.2"
-  resolved "https://registry.npmjs.org/primevue/-/primevue-5.0.2.tgz"
-  integrity sha512-6k5I9vpR4heSXym2wuUcqXXAPjFbozIlVBllAsHRl73zPo+rQSONKvwwFA/6MP9Drg71nYsLffD4VBgQMLkUvg==
+primevue@^5.0.3:
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/primevue/-/primevue-5.0.3.tgz#5cd2b0ed5ccad08b896519e815ae21fdbeafb505"
+  integrity sha512-E8urvyWFlKBP0MD5FVNtOkspCDl+pZgf5sZ1Zvw0t+a41EtTaUW3pC+TeolwklHVLCNKF+SN4vZ5tCxTJCO4Yw==
   dependencies:
     "@primeicons/vue" "^8.0.0"
     "@primeui/license-manager" "^1.0.0"
     "@primeuix/motion" "^1.0.0"
-    "@primeuix/styled" "^1.0.0"
-    "@primeuix/styles" "^3.0.0"
-    "@primeuix/utils" "^0.8.0"
-    "@primevue/core" "5.0.2"
-    "@primevue/icons" "5.0.2"
+    "@primeuix/styled" "^1.1.0"
+    "@primeuix/styles" "^3.0.2"
+    "@primeuix/utils" "^0.8.3"
+    "@primevue/core" "5.0.3"
+    "@primevue/icons" "5.0.3"
 
 proper-lockfile@^4.1.2:
   version "4.1.2"
@@ -4160,7 +4146,7 @@ quansync@^0.2.11:
 
 quasar@^2.23.4:
   version "2.35.2"
-  resolved "https://registry.yarnpkg.com/quasar/-/quasar-2.35.2.tgz#82c47572a4b80a1f7821d60882612b0f1b01cf55"
+  resolved "https://registry.npmjs.org/quasar/-/quasar-2.35.2.tgz"
   integrity sha512-zxX7yojl3usZDDD8fk03U6JYyCefxxEhYtFJT8iDjsNoW+Y3Zmet2io1pNsnSB060HwduJuoBJhKgIPv8WD10A==
 
 range-parser@^1.2.1:
