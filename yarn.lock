@@ -2862,9 +2862,9 @@ hasown@^2.0.2, hasown@^2.0.4:
     function-bind "^1.1.2"
 
 hono@^4.13.8:
-  version "4.13.8"
-  resolved "https://registry.npmjs.org/hono/-/hono-4.13.8.tgz"
-  integrity sha512-/Gng7NfoykZl2pjukW5Z6+8Yxm3BPRf86GTbQnt0SbySkvax4fyL4H3HhY1cCpBGmiW9XDRFzRV+CXK2W8QudQ==
+  version "4.13.13"
+  resolved "https://registry.yarnpkg.com/hono/-/hono-4.13.13.tgz#8dd5459ce4aa44b3e297f0b350f86b0f6d4a79f0"
+  integrity sha512-CQ46U0ZkAGmbT/4UxdzzGJpacP2IeKgY4a5/tOI9AABbpOMfK739wfDXmv1usCk+3RkKj1hQy4/fjhiwa2xlrA==
 
 hookable@^5.5.3:
   version "5.5.3"
@@ -4082,7 +4082,7 @@ pretty-format@30.5.1:
     "@jest/schemas" "30.5.0"
     ansi-styles "^5.2.0"
 
-primevue@^5.0.3:
+primevue@^5.0.0:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/primevue/-/primevue-5.0.3.tgz#5cd2b0ed5ccad08b896519e815ae21fdbeafb505"
   integrity sha512-E8urvyWFlKBP0MD5FVNtOkspCDl+pZgf5sZ1Zvw0t+a41EtTaUW3pC+TeolwklHVLCNKF+SN4vZ5tCxTJCO4Yw==
