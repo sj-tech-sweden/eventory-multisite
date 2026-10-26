@@ -761,9 +761,9 @@
   integrity sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==
 
 "@napi-rs/wasm-runtime@^1.1.4":
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/@napi-rs/wasm-runtime/-/wasm-runtime-1.2.5.tgz#8c728c07e2543d80e55ccb34158c4ae9d6bd13e8"
-  integrity sha512-HshSvXzmBxNzqejd3k/KemgQ3hdREUYFRRrgxOZ+gPljDIsO2SDZrVZMd4Z/HsxudQbE62OVyVFE8z9BCurfjA==
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/@napi-rs/wasm-runtime/-/wasm-runtime-1.2.6.tgz#bc856c4ab60cd9c6c8e4432b5d6f50ceba0ca8f4"
+  integrity sha512-mRyDmEw9/fCDXCGfL1sbgIw/GUK0PVxRW4YwgPN61F3LQ+fSyoBFarJVzgGyhF6kRzEQZ0FejDqm4WLXSeqQmw==
   dependencies:
     "@tybys/wasm-util" "^0.10.3"
 
@@ -1000,29 +1000,29 @@
   resolved "https://registry.npmjs.org/@pkgr/core/-/core-0.3.6.tgz"
   integrity sha512-SEeaJLb3qBNF/OaXnaR1NmmBbFYk1zC0ZH/52fATcRPLFg/p791YrcyFFy44Bo9sLaGuSuLp5Q6axbb/O+v/RA==
 
-"@primeicons/core@8.0.2":
-  version "8.0.2"
-  resolved "https://registry.yarnpkg.com/@primeicons/core/-/core-8.0.2.tgz#83de60b1b73a3df891a1e64cd673bad91a804642"
-  integrity sha512-VySryvfIQH2xzNVXISIQg357gAt4oFYX2vKy27tWMB7UvEHu/gjRpeilBty3LBln7oVuAdFLPYOWr/FtTH8eJw==
+"@primeicons/core@8.0.0":
+  version "8.0.0"
+  resolved "https://registry.npmjs.org/@primeicons/core/-/core-8.0.0.tgz"
+  integrity sha512-vPif+sXxajXCSL2bmNBP0QYliJONVRgFVpCg9e7hGn7IG18JkMAm4fF5HVld1N4sDATkZQM7jKVxdZ8EK09Giw==
   dependencies:
     "@primeuix/utils" "^0.8.0"
 
 "@primeicons/vue@^8.0.0":
-  version "8.0.2"
-  resolved "https://registry.yarnpkg.com/@primeicons/vue/-/vue-8.0.2.tgz#e4a7757c548c0139b9ff87e2d07eaef695549906"
-  integrity sha512-HRb3kgnj0XbqZvYCkgnF5LSAKNoRAgU8hwXcVqeCSKQKO3uJoI4oYDtEwULM8Rxy2avhiJuozlVHugskDF4HdQ==
+  version "8.0.0"
+  resolved "https://registry.npmjs.org/@primeicons/vue/-/vue-8.0.0.tgz"
+  integrity sha512-sIqk+kZB9Bn0FqODjDAnNvRXY4Ypky2TInY/oIC3aAJOud1A3FoKruMC8IwiRDz1uHzxYnQqWwtFsfZAgC7qXQ==
   dependencies:
-    "@primeicons/core" "8.0.2"
+    "@primeicons/core" "8.0.0"
     "@primeuix/utils" "^0.8.0"
 
 "@primeui/license-manager@^1.0.0":
   version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@primeui/license-manager/-/license-manager-1.1.0.tgz#d19ec4c6c4831b9b7b64a91a35b8c83cb50e69ed"
+  resolved "https://registry.npmjs.org/@primeui/license-manager/-/license-manager-1.1.0.tgz"
   integrity sha512-irjhOGs6Xjwh1JhMyXtdUsYCsve6kBySZzDUhS/mWxsjwQm/wSN7oulyP/f5huJKdhZSzaN6rVApwpp4nDWE1g==
 
 "@primeuix/motion@^1.0.0":
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@primeuix/motion/-/motion-1.0.0.tgz#625c2423adee9fa22cfd298a595828a8c20bf028"
+  resolved "https://registry.npmjs.org/@primeuix/motion/-/motion-1.0.0.tgz"
   integrity sha512-rqpFRKmUVp9BI3YQKdok0rLUwzYShXzuuxy72Kq74xYRV14eR+4+XrIXOdyVs7j7CYV0ajYowiRpJCrVgdrq6A==
   dependencies:
     "@primeuix/utils" "^0.8.0"
@@ -1036,14 +1036,14 @@
 
 "@primeuix/styled@^1.2.0":
   version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@primeuix/styled/-/styled-1.2.0.tgz#8ef8bcdefe8642db3ce605c0319b52cec22cf757"
+  resolved "https://registry.npmjs.org/@primeuix/styled/-/styled-1.2.0.tgz"
   integrity sha512-PaZ2CMkMGcW03XO3CawHbCCxB9rj0IFKj/7lOmNLYw9s4UqgeleJVii2BJ7P0Un3OxIG7oU9wnjsamrp1QFchQ==
   dependencies:
     "@primeuix/utils" "^0.8.3"
 
 "@primeuix/styles@^3.1.0":
   version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@primeuix/styles/-/styles-3.1.0.tgz#c414cb885d5aeace9598bf97cad7d6246cb4747e"
+  resolved "https://registry.npmjs.org/@primeuix/styles/-/styles-3.1.0.tgz"
   integrity sha512-xl1e8gcUhsqu1YgGIUe3R/PSKJHk88NMVwnOTVZZfptx955Rw0GkwvhRaeBh9iPVz4p5b7t9OiGJDWOu2qpX0Q==
   dependencies:
     "@primeuix/styled" "^1.2.0"
@@ -1060,14 +1060,19 @@
   resolved "https://registry.npmjs.org/@primeuix/utils/-/utils-0.6.4.tgz"
   integrity sha512-pZ5f+vj7wSzRhC7KoEQRU5fvYAe+RP9+m39CTscZ3UywCD1Y2o6Fe1rRgklMPSkzUcty2jzkA0zMYkiJBD1hgg==
 
-"@primeuix/utils@^0.8.0", "@primeuix/utils@^0.8.3":
+"@primeuix/utils@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.npmjs.org/@primeuix/utils/-/utils-0.8.0.tgz"
+  integrity sha512-dZSMKU2XJ7W7VDLuFMS/o4k+QYw4SYIpqSNhR/jdasMaaXl8eq0Gt7fTzTwwq7hgfmfOsI6V5xtzUUIvybOJ/w==
+
+"@primeuix/utils@^0.8.3":
   version "0.8.3"
-  resolved "https://registry.yarnpkg.com/@primeuix/utils/-/utils-0.8.3.tgz#fff5dbd2e9c3c5953d340ef82b9a0bc872f3588f"
+  resolved "https://registry.npmjs.org/@primeuix/utils/-/utils-0.8.3.tgz"
   integrity sha512-UyFtnzxHfG7UqbOqUsjMXpe96h36eDre9Iw+zkZuJHsplHdoXNWgovDkoGZNxw4V5ZUHP1Y3pIu0kJw0OhmT0g==
 
 "@primevue/core@5.0.4":
   version "5.0.4"
-  resolved "https://registry.yarnpkg.com/@primevue/core/-/core-5.0.4.tgz#974027e963c20fd906431f7ed68794e6a95a5c88"
+  resolved "https://registry.npmjs.org/@primevue/core/-/core-5.0.4.tgz"
   integrity sha512-EK2te4t5VaCAPddRo47z3quBwFPK0Xf/f0Lk7EGXa3u+lXy63WI4JV2tYjtPoONTD4ulsrtyUOD0iopWh8GicQ==
   dependencies:
     "@primeui/license-manager" "^1.0.0"
@@ -1076,7 +1081,7 @@
 
 "@primevue/icons@5.0.4":
   version "5.0.4"
-  resolved "https://registry.yarnpkg.com/@primevue/icons/-/icons-5.0.4.tgz#363e77317f654f7d1274e764a6e08e415022f389"
+  resolved "https://registry.npmjs.org/@primevue/icons/-/icons-5.0.4.tgz"
   integrity sha512-ImyUXU8kztbBQwZPjMYDRsMV3kpw+a16JKTViZp9tZNpKWod83yUDbGg5TApxfu62o089QwCONMl5BHfb28eYA==
   dependencies:
     "@primeuix/utils" "^0.8.3"
@@ -1895,7 +1900,7 @@ birpc@^2.6.1:
 
 boolbase@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.npmjs.org/boolbase/-/boolbase-1.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==
 
 brace-expansion@^2.0.2:
@@ -2124,7 +2129,7 @@ cross-spawn@^7.0.3, cross-spawn@^7.0.6:
 
 cssesc@^3.0.0:
   version "3.0.0"
-  resolved "https://registry.npmjs.org/cssesc/-/cssesc-3.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-3.0.0.tgz#37741919903b868565e1c09ea747445cd18983ee"
   integrity sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==
 
 csstype@^3.2.3:
@@ -2352,10 +2357,10 @@ eslint-plugin-prettier@^5.2.2:
     prettier-linter-helpers "^1.0.1"
     synckit "^0.11.13"
 
-eslint-plugin-vue@^10.10.0:
-  version "10.11.1"
-  resolved "https://registry.npmjs.org/eslint-plugin-vue/-/eslint-plugin-vue-10.11.1.tgz"
-  integrity sha512-pasVXhl7wUmIvhujoqs/m0mJ9r59QW1IR9XXYKGR0FETzSM+Hhlf4qKIYgWiDDP+9YKv4YfbwskD7LqIdVcgQw==
+eslint-plugin-vue@^10.12.0:
+  version "10.12.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-10.12.0.tgz#e3196ce9f4831b7e4424febb2d74c7a30f6fbce2"
+  integrity sha512-YsrHHtMaxjWqmxr/Kv9yXUfakUlbTCWtIBvr9eounzj6ZsGJdz1I4UuTIHkhzKHes793Cwo3PGTcvsoBqNyzCA==
   dependencies:
     "@eslint-community/eslint-utils" "^4.9.1"
     natural-compare "^1.4.0"
@@ -2376,7 +2381,7 @@ eslint-plugin-vue@^10.10.0:
 
 eslint-visitor-keys@^3.4.3:
   version "3.4.3"
-  resolved "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-3.4.3.tgz"
+  resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.4.3.tgz#0cd72fe8550e3c2eae156a96a4dddcd1c8ac5800"
   integrity sha512-wpc+LXeiyiisxPlEkUzU6svyS1frIO3Mgxj1fdy7Pm8Ygzguax2N3Fa/D/ag1WqbOprdI+uY6wMUl8/a2G+iag==
 
 "eslint-visitor-keys@^4.2.0 || ^5.0.0", eslint-visitor-keys@^5.0.1:
@@ -3673,7 +3678,7 @@ napi-postinstall@^0.3.4:
 
 natural-compare@^1.4.0:
   version "1.4.0"
-  resolved "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz"
+  resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
 no-case@^3.0.4:
@@ -3726,7 +3731,7 @@ npm-run-path@^6.0.0:
 
 nth-check@^2.1.1:
   version "2.1.1"
-  resolved "https://registry.npmjs.org/nth-check/-/nth-check-2.1.1.tgz"
+  resolved "https://registry.yarnpkg.com/nth-check/-/nth-check-2.1.1.tgz#c9eab428effce36cd6b92c924bdb000ef1f1ed1d"
   integrity sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==
   dependencies:
     boolbase "^1.0.0"
@@ -3944,9 +3949,9 @@ pkijs@^3.3.3:
     tslib "^2.8.1"
 
 postcss-selector-parser@^7.1.4:
-  version "7.1.6"
-  resolved "https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-7.1.6.tgz"
-  integrity sha512-7qASPzhKF2l2KLboRZux8CCTRMdGiV08vWmyKzPz22qZ7ZjQBOeY7rNzNoCLSUiftJ7HUq0GERHmxw/t0dCdMw==
+  version "7.1.7"
+  resolved "https://registry.yarnpkg.com/postcss-selector-parser/-/postcss-selector-parser-7.1.7.tgz#70e353032ced41529d70b7662227a74eb001d31b"
+  integrity sha512-wWBro/7hJ40ye6TPiXkUQoXKCw23xSsjriUvqd7Uls9Sso3oLiON1flc18cCdnjgCRXw4fBVqUJJeOdDTh3P3g==
   dependencies:
     cssesc "^3.0.0"
     util-deprecate "^1.0.2"
@@ -4002,9 +4007,9 @@ pretty-format@30.5.1:
     "@jest/schemas" "30.5.0"
     ansi-styles "^5.2.0"
 
-primevue@^5.0.4:
+primevue@^5.0.0:
   version "5.0.4"
-  resolved "https://registry.yarnpkg.com/primevue/-/primevue-5.0.4.tgz#3cdb6bd26f799dcd008b5be7130cab38ff7fba2d"
+  resolved "https://registry.npmjs.org/primevue/-/primevue-5.0.4.tgz"
   integrity sha512-Tqi45bj2eQMZ47dGeKnSPzSSm9BX+cgkKaLQOk9ScFLYIHg/yOHRCLPz9rw3e9eA/uz2e6ll5dtV9yWUVQoRBw==
   dependencies:
     "@primeicons/vue" "^8.0.0"
@@ -4309,7 +4314,7 @@ semver@^6.3.1:
 
 semver@^7.5.3, semver@^7.5.4, semver@^7.6.3, semver@^7.7.2, semver@^7.8.5:
   version "7.8.5"
-  resolved "https://registry.npmjs.org/semver/-/semver-7.8.5.tgz"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.8.5.tgz#39b646037dd50c14fb451e7e4cac58ed8b863f69"
   integrity sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA==
 
 send@^1.2.0:
@@ -4704,7 +4709,7 @@ uri-js@^4.2.2:
 
 util-deprecate@^1.0.2:
   version "1.0.2"
-  resolved "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz"
+  resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==
 
 v8-to-istanbul@^9.0.1:
@@ -4868,7 +4873,7 @@ wsl-utils@^1.0.0:
 
 xml-name-validator@^5.0.0:
   version "5.0.0"
-  resolved "https://registry.npmjs.org/xml-name-validator/-/xml-name-validator-5.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/xml-name-validator/-/xml-name-validator-5.0.0.tgz#82be9b957f7afdacf961e5980f1bf227c0bf7673"
   integrity sha512-EvGK8EJ3DhaHfbRlETOWAS5pO9MZITeauHKJyb8wyajUfQUenkIg2MvLDTZ4T/TgIcm3HU0TFBgWWboAZ30UHg==
 
 y18n@^5.0.5:
