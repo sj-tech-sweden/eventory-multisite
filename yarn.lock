@@ -13,7 +13,7 @@
 
 "@babel/code-frame@^8.0.0":
   version "8.0.6"
-  resolved "https://registry.npmjs.org/@babel/code-frame/-/code-frame-8.0.6.tgz"
+  resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-8.0.6.tgz#5247d36cef9fd187dd4d84a0ba659fa29341616c"
   integrity sha512-uMHhvmDmwFiLuiozaoRYTZHqMFuu3fem/X9JY78lohAuLoh8LSGGC8JqUzo2cVuBsBxkjMZNk56CE7ock8Xxkw==
   dependencies:
     "@babel/helper-validator-identifier" "^8.0.6"
@@ -111,7 +111,7 @@
 
 "@babel/helper-validator-identifier@^8.0.6":
   version "8.0.6"
-  resolved "https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-8.0.6.tgz"
+  resolved "https://registry.yarnpkg.com/@babel/helper-validator-identifier/-/helper-validator-identifier-8.0.6.tgz#fda51b4365505595779b51ea1ae0899ad9d76866"
   integrity sha512-HYx0YmuchRxRSpnjvcNffnPS8DCauKNmnumIuHG3jnQAVewRA7kfJGwF13ayEpSZs7s4R/oBH4eppuXcAQd5JQ==
 
 "@babel/helper-validator-option@^7.29.7":
@@ -1911,9 +1911,9 @@ brace-expansion@^2.0.2:
     balanced-match "^1.0.0"
 
 brace-expansion@^5.0.12:
-  version "5.0.13"
-  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-5.0.13.tgz#e2d4497370f7e385e6f96b57bd7ff11d77d85851"
-  integrity sha512-Vh3dmFbc4wZeox7M9I/0L9GfFd83Su4+yCck/OF9Gi/P/dAHn0RT7X4K9R7gMNMhDck3DvhR6QXsnQdjjgwNvQ==
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-5.1.0.tgz#719c6a5c65fc0dee849b69ff25b4c023458537e2"
+  integrity sha512-aa11Dv491GKnYqxaul3aRJ0szew7yMJMfZPnqD44NjGrZXoj62l41OEDDpdpC4eE2P88vBFfLuSyRhpG91NUvg==
   dependencies:
     balanced-match "^4.0.2"
 
@@ -2028,7 +2028,7 @@ chokidar@^5.0.0:
 
 chokidar@^6.0.0:
   version "6.0.0"
-  resolved "https://registry.npmjs.org/chokidar/-/chokidar-6.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-6.0.0.tgz#66bb84678ab40b8d25679d71f3955bd206ab618b"
   integrity sha512-Ec2Z7wpcKBiMpR7DxteoqS/sq5G5d2A4fpxzPv6+fD7xNNdrTghn7L11YwV5EN1B3i72Erc3XVT5FkWIDx90+A==
   dependencies:
     readdirp "^5.1.1"
@@ -2052,7 +2052,7 @@ clean-css@~5.3.2:
 
 clickable-path@^0.1.1:
   version "0.1.1"
-  resolved "https://registry.npmjs.org/clickable-path/-/clickable-path-0.1.1.tgz"
+  resolved "https://registry.yarnpkg.com/clickable-path/-/clickable-path-0.1.1.tgz#c11c5fddbf0781f6f7382b529c5e1d7f9124839a"
   integrity sha512-ROn/mdV2pR8WFdpJjFDCSouLRg9myf95xacO1iy8G/AVO/x5y124pjF3EaoWrTBRWC3vh0DPqa/MhKyx3mMeKg==
 
 cliui@^8.0.1:
@@ -3372,9 +3372,9 @@ jiti@^2.7.0:
   integrity sha512-AC/7JofJvZGrrneWNaEnJeOLUx+JlGt7tNa0wZiRPT4MY1wmfKjt2+6O2p2uz2+skll8OZZmJMNqeke7kKbNgQ==
 
 js-tokens@^10.0.0:
-  version "10.0.0"
-  resolved "https://registry.npmjs.org/js-tokens/-/js-tokens-10.0.0.tgz"
-  integrity sha512-lM/UBzQmfJRo9ABXbPWemivdCW8V2G8FHaHdypQaIy523snUjog0W71ayWXTjiR+ixeMyVHN2XcpnTd/liPg/Q==
+  version "10.0.1"
+  resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-10.0.1.tgz#de22ff1149f046e6c9a585f5fc276b664d115725"
+  integrity sha512-XMt+uh+yEs6srFvEb/pEe4IMvbtoXVdNxF7lZFU+I9sdWI641L97L+gXQMTGm1x3RjPUVizNVjHueclXr0U7sw==
 
 js-tokens@^4.0.0:
   version "4.0.0"
@@ -4096,9 +4096,9 @@ quansync@^1.0.0:
   resolved "https://registry.npmjs.org/quansync/-/quansync-1.0.0.tgz"
   integrity sha512-5xZacEEufv3HSTPQuchrvV6soaiACMFnq1H8wkVioctoH3TRha9Sz66lOxRwPK/qZj7HPiSveih9yAyh98gvqA==
 
-quasar@^2.35.6:
+quasar@^2.23.4:
   version "2.35.6"
-  resolved "https://registry.yarnpkg.com/quasar/-/quasar-2.35.6.tgz#47efcb007df15239f2ff4a7adf210a5bd8018cdc"
+  resolved "https://registry.npmjs.org/quasar/-/quasar-2.35.6.tgz"
   integrity sha512-BxQLJNzV5gK+DqgEqv2dl/PJWAcNRnedV5ozwjLpJ2OWf1LTrDXdR8BH09TY/HyXR8xgYiyHH35NxRieDlo5og==
 
 range-parser@^1.2.1:
@@ -4108,7 +4108,7 @@ range-parser@^1.2.1:
 
 readdirp@^5.0.0, readdirp@^5.1.1:
   version "5.1.1"
-  resolved "https://registry.npmjs.org/readdirp/-/readdirp-5.1.1.tgz"
+  resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-5.1.1.tgz#520bca06f9d1ae1b96cc0800dbe84b983d19422c"
   integrity sha512-Kko+Y5XQ6fM+Ce3dq3m9YGxnacYZYl9cA1wZjaF3Vbry2L3i1qVg8+CAgNPsXRArPMUMCaOR7oa9Nqntc43JKA==
 
 reflect-metadata@^0.2.2:
@@ -4584,9 +4584,9 @@ test-exclude@^7.0.1:
     minimatch "^10.2.2"
 
 tinyexec@^1.2.4:
-  version "1.3.1"
-  resolved "https://registry.npmjs.org/tinyexec/-/tinyexec-1.3.1.tgz"
-  integrity sha512-GCvB3aoys96IuDFBMcTB46JOR6mdMtAToqwiW8JlWhsoh1mhHi/xn9ss/Dg7N555GiJyEt2qzoG/NHCwM6h1EA==
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/tinyexec/-/tinyexec-1.4.0.tgz#00ebfefb08f1d608ccbf433743830dffe56c7dee"
+  integrity sha512-PV6lIcJQh57aFeJDwx16JNHmgFRh5xguzallrDW1qe8nAghYgr5MKz2K5k7wEyV/ygZhdnIAP8+HZSarHPBCsg==
 
 tinyglobby@^0.2.17:
   version "0.2.17"
@@ -4749,10 +4749,10 @@ varint@^6.0.0:
   resolved "https://registry.npmjs.org/varint/-/varint-6.0.0.tgz"
   integrity sha512-cXEIW6cfr15lFv563k4GuVuW/fiwjknytD37jIOLSdSWuOI6WnO/oKwmP2FQTU2l01LP8/M5TSAJpzUaGe3uWg==
 
-vite-plugin-checker@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/vite-plugin-checker/-/vite-plugin-checker-1.0.0.tgz"
-  integrity sha512-3Ef78GTs13BUSTCqUCnl5kh8/Ev00G3cTt4z2mQacCODCdx6oq4B/TgXiCvGJ1D7/Hhbd84QKz691+8gbn1uog==
+vite-plugin-checker@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/vite-plugin-checker/-/vite-plugin-checker-1.1.0.tgz#bb7edffc4dd07f52e3fd21a13820e751264758af"
+  integrity sha512-div6bd92uVpoTNUm3WYqlFQnc9MvAX8urim8VYjk14+15wzsefxs3DFO1S2WTlF1Gtg+4IWkfcsbyhqarQsusQ==
   dependencies:
     "@babel/code-frame" "^8.0.0"
     chokidar "^6.0.0"
